@@ -1,0 +1,882 @@
+<!doctype html>
+<!-- Copyright (c) 2026 geniuskey and ChipIndustryBook contributors.
+     Executable code: MIT (see ../LICENSE-MIT).
+     Text, illustrations, questions and explanations: CC-BY-4.0 (see ../LICENSE.md). -->
+<html lang="ko">
+<head>
+<!--head:start {"desc": "반도체 산업 용어 130여 개와 세계 반도체 회사 90여 곳을 검색하고, 회사 맞히기 게임과 20문항 종합 퀴즈로 산업 지도를 점검한다.", "libs": ["ind"]}-->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>용어집 & 종합 퀴즈 · ChipIndustryBook</title>
+<meta name="description" content="반도체 산업 용어 130여 개와 세계 반도체 회사 90여 곳을 검색하고, 회사 맞히기 게임과 20문항 종합 퀴즈로 산업 지도를 점검한다.">
+<link rel="canonical" href="https://chipindustrybook.euiyun.com/chapters/glossary.html">
+<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+<meta name="theme-color" content="#0b7285">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ChipIndustryBook">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="용어집 &amp; 종합 퀴즈 · ChipIndustryBook">
+<meta property="og:description" content="반도체 산업 용어 130여 개와 세계 반도체 회사 90여 곳을 검색하고, 회사 맞히기 게임과 20문항 종합 퀴즈로 산업 지도를 점검한다.">
+<meta property="og:url" content="https://chipindustrybook.euiyun.com/chapters/glossary.html">
+<meta property="og:image" content="https://chipindustrybook.euiyun.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":["Chapter","LearningResource"],"@id":"https://chipindustrybook.euiyun.com/chapters/glossary.html#chapter","name":"용어집 & 종합 퀴즈","headline":"용어집 & 종합 퀴즈 · ChipIndustryBook","description":"반도체 산업 용어 130여 개와 세계 반도체 회사 90여 곳을 검색하고, 회사 맞히기 게임과 20문항 종합 퀴즈로 산업 지도를 점검한다.","url":"https://chipindustrybook.euiyun.com/chapters/glossary.html","position":17,"inLanguage":"ko","isAccessibleForFree":true,"learningResourceType":"인터랙티브 교재","educationalLevel":"대학·일반","image":"https://chipindustrybook.euiyun.com/og.png","dateModified":"2026-10-04","isPartOf":{"@type":"Book","@id":"https://chipindustrybook.euiyun.com/#book","name":"ChipIndustryBook · 반도체 산업 지도","url":"https://chipindustrybook.euiyun.com/"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"ChipIndustryBook","item":"https://chipindustrybook.euiyun.com/"},{"@type":"ListItem","position":2,"name":"17. 용어집 & 종합 퀴즈","item":"https://chipindustrybook.euiyun.com/chapters/glossary.html"}]}]}</script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/common.js"></script>
+<script src="../js/industry.js"></script>
+<!--head:end-->
+<style>
+  [hidden] { display: none !important; }
+  .gl-tools { display: grid; gap: 10px; margin-bottom: 16px; }
+  .gl-tools .row { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; }
+  .gl-tools .cap { font-size: 13px; color: var(--text-dim); }
+  .gl-tools .seg button { font-size: 12.5px; padding: 4px 9px; }
+  .gl-search { margin-bottom: 0 !important; }
+  .gl-count { font-size: 13px; color: var(--text-faint); margin-left: auto; font-family: var(--mono); }
+  #gl-list { max-height: min(76vh, 900px); overflow-y: auto; overscroll-behavior: contain; padding: 2px 6px 2px 2px; border-radius: 12px; }
+  .gl-group { position: sticky; top: 0; z-index: 1; background: var(--bg); font-weight: 700; font-size: 13px; color: var(--accent); letter-spacing: .04em; margin: 14px 0 0; padding-bottom: 4px; border-bottom: 1px solid var(--border); }
+  .gl-group:first-child { margin-top: 0; }
+  .gl-item h4 { overflow-wrap: anywhere; }
+  .gl-item h4 .abbr { font-family: var(--mono); font-size: 12px; font-weight: 700; color: var(--accent-2); background: var(--accent-2-soft); border-radius: 5px; padding: 1px 6px; margin-left: 6px; vertical-align: 1px; white-space: nowrap; }
+  .gl-item .cat { font-size: 11.5px; padding: 1px 8px; border-radius: 999px; background: var(--surface); color: var(--text-dim); margin-right: 10px; }
+  .gl-item .ch + .ch { margin-left: 12px; }
+  .gl-item mark { background: color-mix(in srgb, var(--warn) 35%, transparent); color: inherit; border-radius: 3px; padding: 0 1px; }
+  .gl-item.flash { outline: 2px solid var(--accent); }
+  .gl-empty { padding: 24px; text-align: center; color: var(--text-dim); border: 1px dashed var(--border); border-radius: 12px; }
+
+  .cd-q { width: 100%; font: inherit; font-size: 14px; padding: 8px 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg); color: var(--text); }
+  .cd-wrap { max-height: 340px; overflow: auto; border-top: 1px solid var(--border); }
+  .cd-wrap table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  .cd-wrap th, .cd-wrap td { padding: 6px 10px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; }
+  .cd-wrap th { position: sticky; top: 0; background: var(--bg-elev); font-size: 12px; color: var(--text-dim); z-index: 1; }
+  .cd-wrap td.num { text-align: right; font-family: var(--mono); white-space: nowrap; }
+  .cd-wrap tr { cursor: pointer; }
+  .cd-wrap tr:hover td { background: var(--accent-soft); }
+  .cd-wrap tr.on td { background: color-mix(in srgb, var(--accent) 18%, transparent); }
+  .cd-wrap td .sub { display: block; font-size: 12px; color: var(--text-faint); }
+  @media (max-width: 560px) { .cd-wrap .hide-n { display: none; } }
+
+  .fq-bar { position: sticky; top: calc(var(--nav-h, 56px) + 6px); z-index: 4; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; padding: 10px 16px; margin: 0 0 16px; border-radius: 12px; background: var(--bg-elev); border: 1px solid var(--border); box-shadow: var(--shadow); font-size: 14px; }
+  .fq-bar b { font-family: var(--mono); font-size: 18px; color: var(--accent); }
+  .fq-bar .track { flex: 1 1 140px; height: 8px; border-radius: 4px; background: var(--surface-2); overflow: hidden; display: flex; }
+  .fq-bar .track i { display: block; height: 100%; }
+  .fq-bar .track i.ok { background: var(--ok); } .fq-bar .track i.bad { background: var(--bad); }
+  .quiz-q .qch { font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: .03em; margin: 0 0 4px !important; }
+  .fq-result { margin-top: 18px; padding: 20px; border-radius: var(--radius); background: var(--bg-elev); border: 1px solid var(--border); text-align: center; }
+  .fq-result .rank { font-size: 13px; letter-spacing: .1em; color: var(--text-faint); font-weight: 700; }
+  .fq-result .title { font-size: clamp(22px, 5vw, 30px); font-weight: 800; margin: 4px 0; color: var(--accent); }
+  .fq-result .big { font-family: var(--mono); font-size: 36px; font-weight: 700; }
+  .fq-result .big small { font-size: 16px; color: var(--text-dim); }
+  .fq-result p { color: var(--text-dim); }
+</style>
+</head>
+<body data-chapter="glossary">
+<main class="chapter">
+  <header class="chapter-hero">
+    <div class="eyebrow">Chapter 17</div>
+    <h1>용어집 &amp; 종합 퀴즈</h1>
+    <p class="lead">반도체 산업의 대화는 약어로 오간다. IDM, OSAT, NRE, HBM, TPP, HHI… 이 장은 책 전체에 흩어진 용어와 회사 이름을 한곳에 모은 사전이고, 산업 지도를 머릿속에 다시 그려 보는 마무리 시험이다.</p>
+    <ul class="objectives">
+      <li>한국어·영어·약어 어느 쪽으로든 용어를 찾아 정의를 읽고, 그 용어를 다루는 장으로 바로 이동할 수 있다.</li>
+      <li>세계 반도체 회사 90여 곳을 단계·지역·매출로 거르고 정렬해, 누가 어디서 무엇을 하는지 찾아본다.</li>
+      <li>회사 맞히기 게임과 20문항 종합 퀴즈로 가치사슬 지도 전체를 점검한다.</li>
+    </ul>
+    <p style="margin-top:16px"><a href="#glossary">→ 용어집</a> · <a href="#term-map">→ 용어 지도</a> · <a href="#companies">→ 회사 사전</a> · <a href="#game">→ 회사 맞히기</a> · <a href="#quiz">→ 종합 퀴즈</a></p>
+  </header>
+
+  <section id="glossary">
+    <h2>용어집</h2>
+    <p>검색창에 한국어(예: <code>수율</code>), 영어(예: <code>foundry</code>), 약어(예: <code>NRE</code>) 중 아무것이나 넣으면 바로 걸러진다. 정의 본문도 검색한다. 분야로 범위를 좁히고, 가나다순·분야별·장 순서로 묶어 볼 수 있다. 각 항목 아래 링크는 그 용어를 다루는 장으로 간다.</p>
+    <div class="gl-tools">
+      <input type="search" class="gl-search" id="gl-q" placeholder="용어 검색: 예) 파운드리, chiplet, HHI" autocomplete="off" aria-label="용어 검색">
+      <div class="row">
+        <span class="cap">분야</span>
+        <div class="seg" id="gl-cat">
+          <button data-value="all" class="on">전체</button>
+          <button data-value="econ">시장·경제</button>
+          <button data-value="biz">사업 모델</button>
+          <button data-value="design">설계·IP</button>
+          <button data-value="supply">장비·소재</button>
+          <button data-value="fab">제조</button>
+          <button data-value="mem">메모리</button>
+          <button data-value="pkg">패키징</button>
+          <button data-value="policy">정책·지리</button>
+        </div>
+      </div>
+      <div class="row">
+        <span class="cap">정렬</span>
+        <div class="seg" id="gl-sort"><button data-value="kor" class="on">가나다순</button><button data-value="cat">분야별</button><button data-value="ch">장 순서</button></div>
+        <span class="gl-count" id="gl-count"></span>
+      </div>
+    </div>
+    <div class="gl-list" id="gl-list" aria-live="polite"></div>
+  </section>
+
+  <section id="term-map">
+    <h2>용어 지도</h2>
+    <p>같은 용어들을 분야별 띠 위에 펼쳤다. 장을 고르면 그 장에서 다루는 용어만 밝게 남는다. 용어를 누르면 정의가 나온다.</p>
+
+    <div class="sim" id="sim-gl-map" data-desc="책 전체의 용어 130여 개를 분야별 띠에 칩으로 펼치고, 장을 골라 그 장의 용어만 밝히거나 용어를 눌러 정의를 읽는다">
+      <div class="sim-head"><span class="sim-tag">SIMULATOR</span><h3>한눈에 보는 반도체 산업 용어 지도</h3></div>
+      <div class="sim-body side">
+        <div class="sim-view"><canvas id="tm-cv"></canvas><span class="hint">용어를 누른다</span></div>
+        <div class="sim-controls">
+          <label class="ctrl"><span>장으로 거르기</span><select id="tm-ch"><option value="all">전체 장</option></select></label>
+          <div class="btn-row"><button class="btn primary" id="tm-rand">무작위 용어</button></div>
+        </div>
+      </div>
+      <div class="info-panel" id="tm-info"></div>
+      <div class="sim-readout">
+        <div class="stat"><span class="k">전체 용어</span><span class="v" id="tm-o1">—</span></div>
+        <div class="stat"><span class="k">선택한 장의 용어</span><span class="v" id="tm-o2">—</span></div>
+        <div class="stat"><span class="k">가장 많은 분야</span><span class="v" id="tm-o3">—</span></div>
+      </div>
+      <div class="sim-note">해볼 것: ① '장으로 거르기'에서 9장 파운드리와 14장 정책과 지정학을 차례로 골라 밝아지는 띠가 어떻게 바뀌는지 본다. ② '무작위 용어'를 몇 번 눌러 정의를 읽고 스스로 설명해 본다. ③ 약어 칩(NRE, HHI, TPP …)을 눌러 풀어 쓴 이름을 확인한다. 칩에는 약어가 있으면 약어를, 없으면 한국어 이름을 쓴다.</div>
+    </div>
+  </section>
+
+  <section id="companies">
+    <h2>회사 사전</h2>
+    <p>이 책에 나온 회사 90여 곳을 한 표에 모았다. 지역과 가치사슬 단계로 거르고, 이름으로 찾고, 매출로 정렬한다. 위 막대는 고른 범위의 매출이 어느 지역에 몰려 있는지 보여 준다.</p>
+
+    <div class="sim" id="sim-gl-co" data-desc="세계 반도체 회사 90여 곳을 지역·단계·이름으로 거르고 매출로 정렬해, 지역별 매출 비중 막대와 상위 회사 막대, 표로 본다">
+      <div class="sim-head"><span class="sim-tag">SIMULATOR</span><h3>회사 사전: 누가, 어디서, 얼마나</h3></div>
+      <div class="sim-body side">
+        <div class="sim-view"><canvas id="cd-cv"></canvas><span class="hint">막대나 표의 줄을 누른다</span></div>
+        <div class="sim-controls">
+          <label class="ctrl"><span>이름 검색</span><input type="search" class="cd-q" id="cd-q" placeholder="예) TSMC, 하이닉스" autocomplete="off"></label>
+          <div class="seg" id="cd-rg"><button data-value="all" class="on">전체</button><button data-value="us">미국</button><button data-value="tw">대만</button><button data-value="kr">한국</button><button data-value="jp">일본</button><button data-value="cn">중국</button><button data-value="eu">유럽</button><button data-value="other">기타</button></div>
+          <label class="ctrl"><span>가치사슬 단계</span><select id="cd-seg"><option value="all">전체 단계</option></select></label>
+          <div class="seg" id="cd-sort"><button data-value="rev" class="on">매출순</button><button data-value="name">이름순</button></div>
+        </div>
+      </div>
+      <div class="map-legend" id="cd-legend"></div>
+      <div class="info-panel" id="cd-info"></div>
+      <div class="cd-wrap"><table><thead><tr><th>회사</th><th>지역</th><th class="hide-n">단계·모델</th><th class="num">2024 매출</th></tr></thead><tbody id="cd-body"></tbody></table></div>
+      <div class="sim-readout">
+        <div class="stat"><span class="k">고른 회사</span><span class="v" id="cd-o1">—</span></div>
+        <div class="stat"><span class="k">매출 합</span><span class="v" id="cd-o2">—</span></div>
+        <div class="stat"><span class="k">1위 회사 몫</span><span class="v" id="cd-o3">—</span></div>
+      </div>
+      <div class="sim-note">해볼 것: ① 단계를 '장비'로 고르고 지역 막대에서 미국·일본·유럽이 거의 전부임을 본다. ② 지역을 '한국'으로 바꿔 두 회사가 막대를 거의 다 차지하는 것을 본다. ③ 단계 '웨이퍼 제조(파운드리)'에서 1위 회사 몫을 본다. 매출은 2024년(회계연도) 반도체·해당 사업 기준 근사(IND.COMPANIES)로 순위 비교용이다. 애플 실리콘처럼 칩을 외부에 팔지 않는 곳은 0으로 둔다. 삼성 파운드리는 삼성전자 DS 매출과 겹친다.</div>
+    </div>
+  </section>
+
+  <section id="game">
+    <h2>회사 맞히기</h2>
+    <p>회사 이름 하나가 나온다. 그 회사의 본사 지역(행)과 가치사슬 단계(열)가 만나는 칸을 누른다. 지역과 단계를 모두 맞히면 2점, 하나만 맞히면 1점이다. 10문제를 다 풀면 실제 회사들이 지도 위 어디에 몰려 있는지 드러난다.</p>
+
+    <div class="sim" id="sim-gl-game" data-desc="회사 이름을 보고 지역×가치사슬 단계 격자에서 맞는 칸을 누르는 10문제 게임. 다 풀면 회사 90여 곳의 분포 지도가 나온다">
+      <div class="sim-head"><span class="sim-tag">SIMULATOR</span><h3>지도 맞히기: 이 회사는 어디서 무엇을?</h3></div>
+      <div class="sim-body side">
+        <div class="sim-view"><canvas id="gm-cv"></canvas><span class="hint">칸을 누른다</span></div>
+        <div class="sim-controls">
+          <div class="seg" id="gm-lvl"><button data-value="big" class="on">대표 회사</button><button data-value="all">모든 회사</button></div>
+          <div class="btn-row"><button class="btn primary" id="gm-next">다음 문제</button><button class="btn" id="gm-new">새 게임</button></div>
+        </div>
+      </div>
+      <div class="info-panel" id="gm-info">격자의 칸을 눌러 답한다.</div>
+      <div class="sim-readout">
+        <div class="stat"><span class="k">점수</span><span class="v" id="gm-o1">—</span></div>
+        <div class="stat"><span class="k">완벽 정답</span><span class="v" id="gm-o2">—</span></div>
+        <div class="stat"><span class="k">진행</span><span class="v" id="gm-o3">—</span></div>
+      </div>
+      <div class="sim-note">해볼 것: ① '대표 회사'로 한 판을 풀어 본다(매출 상위 40곳에서 출제). ② '모든 회사'로 바꿔 소재·장비의 작은 회사들까지 맞혀 본다. ③ 게임이 끝나면 나오는 분포 지도에서 빈칸이 가장 많은 지역을 찾는다. 지역은 본사 기준(IND.COMPANIES)이다. 앰코처럼 본사와 공장이 다른 나라에 있는 회사는 본사 지역이 정답이다.</div>
+    </div>
+  </section>
+
+  <section class="quiz-sec" id="quiz">
+    <h2>종합 퀴즈</h2>
+    <p>1장부터 15장까지 고루 뽑은 20문항이다. 답을 고르면 바로 해설이 열리고, 위 막대에 점수가 쌓인다. 다 풀면 다시 볼 장을 알려 준다.</p>
+    <div class="fq-bar" id="fq-bar"><span>정답 <b id="fq-ok">0</b> / 답한 <span id="fq-n">0</span> / 20</span><span class="track" id="fq-track"></span></div>
+    <div class="quiz" id="fq">
+      <div class="quiz-q" data-ch="overview"><p class="qch">01 지도</p>
+        <p>칩 한 개가 거치는 가치사슬의 순서로 가장 알맞은 것은?</p>
+        <div class="opts">
+          <button class="opt">웨이퍼 제조 → 설계 → 패키징 → 설계 도구</button>
+          <button class="opt" data-correct>설계 도구·IP → 칩 설계 → (장비·소재) → 웨이퍼 제조 → 패키징·테스트 → 시장</button>
+          <button class="opt">패키징 → 웨이퍼 제조 → 설계 → 시장</button>
+          <button class="opt">장비 → 시장 → 설계 → 웨이퍼 제조</button>
+        </div>
+        <div class="quiz-exp">설계 도구와 IP로 칩을 그리고, 장비·소재를 갖춘 팹이 웨이퍼를 만들고, 패키징·테스트를 거쳐 시장으로 간다. 이 책의 장 순서가 그대로 이 경로다.</div>
+      </div>
+      <div class="quiz-q" data-ch="market"><p class="qch">02 시장</p>
+        <p>2024년 세계 반도체 매출(WSTS 근사)에 가장 가까운 것은?</p>
+        <div class="opts">
+          <button class="opt">약 630억 달러</button>
+          <button class="opt">약 2,000억 달러</button>
+          <button class="opt" data-correct>약 6,300억 달러</button>
+          <button class="opt">약 3조 달러</button>
+        </div>
+        <div class="quiz-exp">2024년 약 6,300억 달러로 2023년(약 5,270억 달러)보다 크게 늘었다. 메모리와 데이터센터용 로직이 성장을 이끌었다.</div>
+      </div>
+      <div class="quiz-q" data-ch="cycle"><p class="qch">03 사이클</p>
+        <p>실리콘 사이클이 저절로 생기는 가장 핵심적인 이유는?</p>
+        <div class="opts">
+          <button class="opt" data-correct>가격을 보고 증설을 결정해도 생산능력은 약 2년 뒤에야 늘어나기 때문</button>
+          <button class="opt">반도체 수요가 매년 일정하게 줄기 때문</button>
+          <button class="opt">정부가 4년마다 보조금을 바꾸기 때문</button>
+          <button class="opt">웨이퍼 크기가 주기적으로 바뀌기 때문</button>
+        </div>
+        <div class="quiz-exp">증설 지연이 있는 피드백 고리는 호황 때 과잉 투자, 불황 때 과소 투자를 반복한다. 재고를 쌓고 푸는 채찍 효과가 진폭을 키운다.</div>
+      </div>
+      <div class="quiz-q" data-ch="business"><p class="qch">04 사업 모델</p>
+        <p>팹 가동률이 떨어지면 웨이퍼 장당 원가가 급하게 오르는 이유는?</p>
+        <div class="opts">
+          <button class="opt">소재 가격이 같이 오르기 때문</button>
+          <button class="opt">공정 단계 수가 늘어나기 때문</button>
+          <button class="opt">파운드리가 가격을 올리기 때문</button>
+          <button class="opt" data-correct>감가상각 같은 고정비가 원가의 대부분이어서 적은 장수로 나눠지기 때문</button>
+        </div>
+        <div class="quiz-exp">팹 원가는 장비 감가상각이 지배한다. 고정비를 나눌 웨이퍼가 줄면 장당 원가가 가파르게 오른다. 공장을 갖지 않는 팹리스 모델이 생긴 이유 중 하나다.</div>
+      </div>
+      <div class="quiz-q" data-ch="eda-ip"><p class="qch">05 설계 도구·IP</p>
+        <p>EDA 시장을 나눠 가진 세 회사로 알맞은 것은?</p>
+        <div class="opts">
+          <button class="opt">ASML, 램리서치, KLA</button>
+          <button class="opt" data-correct>시놉시스, 케이던스, 지멘스 EDA</button>
+          <button class="opt">Arm, 이매지네이션, 사이파이브</button>
+          <button class="opt">TSMC, 삼성, 인텔</button>
+        </div>
+        <div class="quiz-exp">세 회사가 EDA 시장의 약 4분의 3을 차지한다(근사). Arm·이매지네이션·사이파이브는 IP 회사, ASML·램·KLA는 장비 회사다.</div>
+      </div>
+      <div class="quiz-q" data-ch="eda-ip"><p class="qch">05 설계 도구·IP</p>
+        <p>Arm의 주된 수익 구조는?</p>
+        <div class="opts">
+          <button class="opt">칩을 직접 만들어 판다</button>
+          <button class="opt">팹을 빌려준다</button>
+          <button class="opt" data-correct>설계 블록을 쓰는 권리(라이선스)와 칩 판매량에 따른 로열티</button>
+          <button class="opt">EDA 소프트웨어 구독료</button>
+        </div>
+        <div class="quiz-exp">Arm은 칩을 만들지 않는다. 명령어 구조와 CPU 코어 설계를 라이선스로 팔고, 그 코어가 들어간 칩이 팔릴 때마다 로열티를 받는다.</div>
+      </div>
+      <div class="quiz-q" data-ch="fabless"><p class="qch">06 팹리스</p>
+        <p>AX-1의 설계비(NRE) 5억 달러를 개당 이익 약 20,700달러로 회수하려면 몇 개를 팔아야 하나?</p>
+        <div class="opts">
+          <button class="opt">약 2,400개</button>
+          <button class="opt" data-correct>약 2.4만 개</button>
+          <button class="opt">약 40만 개</button>
+          <button class="opt">약 240만 개</button>
+        </div>
+        <div class="quiz-exp">5억 ÷ (25,000 − 약 4,257) ≈ 2.4만 개. 같은 NRE라도 개당 이익이 작은 칩이라면 손익분기 판매량이 수백만 개로 커진다.</div>
+      </div>
+      <div class="quiz-q" data-ch="equipment"><p class="qch">07 장비</p>
+        <p>EUV 노광기를 만드는 회사는 몇 곳인가?</p>
+        <div class="opts">
+          <button class="opt" data-correct>한 곳(ASML)</button>
+          <button class="opt">두 곳(ASML, 니콘)</button>
+          <button class="opt">세 곳(ASML, 니콘, 캐논)</button>
+          <button class="opt">다섯 곳 이상</button>
+        </div>
+        <div class="quiz-exp">EUV 노광기는 네덜란드 ASML만 만든다. 니콘·캐논은 DUV 이하 노광 장비를 만든다. 초크포인트의 대표 사례다.</div>
+      </div>
+      <div class="quiz-q" data-ch="materials"><p class="qch">08 소재</p>
+        <p>한 회사가 사실상 독점하는 소재로 알려진 것은?</p>
+        <div class="opts">
+          <button class="opt">실리콘 웨이퍼</button>
+          <button class="opt">특수 가스</button>
+          <button class="opt" data-correct>패키지 기판용 ABF 필름</button>
+          <button class="opt">습식 화학(불산)</button>
+        </div>
+        <div class="quiz-exp">ABF 필름은 아지노모토가 약 95%를 공급한다(근사). 웨이퍼는 신에쓰·섬코 등 5개사가 나눠 갖는다. 시장은 작아도 끊기면 고성능 칩 패키징이 멈춘다.</div>
+      </div>
+      <div class="quiz-q" data-ch="foundry"><p class="qch">09 파운드리</p>
+        <p>다이 면적을 두 배로 키우면 좋은 다이 하나의 원가는 보통 어떻게 되는가?</p>
+        <div class="opts">
+          <button class="opt">그대로다</button>
+          <button class="opt">정확히 두 배가 된다</button>
+          <button class="opt">절반이 된다</button>
+          <button class="opt" data-correct>두 배보다 더 오른다</button>
+        </div>
+        <div class="quiz-exp">웨이퍼당 다이 수가 절반 이하로 줄고(가장자리 손실), 결함에 걸릴 확률이 커져 수율도 떨어진다. 두 효과가 곱해져 원가가 면적보다 빠르게 오른다.</div>
+      </div>
+      <div class="quiz-q" data-ch="foundry"><p class="qch">09 파운드리</p>
+        <p>7 nm 이하 선단 로직 제조에서 TSMC의 점유율(근사)은?</p>
+        <div class="opts">
+          <button class="opt">약 30%</button>
+          <button class="opt">약 50%</button>
+          <button class="opt" data-correct>약 90%</button>
+          <button class="opt">100%</button>
+        </div>
+        <div class="quiz-exp">선단 로직은 TSMC가 약 90%, 삼성이 약 8%를 만든다(근사). 고정비와 학습 효과가 큰 시장에서 승자 독식이 일어난 결과다.</div>
+      </div>
+      <div class="quiz-q" data-ch="memory"><p class="qch">10 메모리</p>
+        <p>DRAM 시장 구조를 가장 잘 설명한 것은?</p>
+        <div class="opts">
+          <button class="opt">수십 개 회사가 고르게 나눠 갖는다</button>
+          <button class="opt" data-correct>삼성전자·SK하이닉스·마이크론 세 회사가 약 95%를 만든다</button>
+          <button class="opt">TSMC가 대부분을 만든다</button>
+          <button class="opt">중국 회사들이 절반 이상을 만든다</button>
+        </div>
+        <div class="quiz-exp">2000년대 치킨 게임을 거치며 DRAM은 세 회사 과점이 되었다. 중국 CXMT가 추격 중이지만 아직 몫은 작다(근사).</div>
+      </div>
+      <div class="quiz-q" data-ch="memory"><p class="qch">10 메모리</p>
+        <p>HBM 생산을 늘리면 일반 DRAM 공급이 빠듯해지는 이유는?</p>
+        <div class="opts">
+          <button class="opt">HBM이 NAND 공장에서 만들어지기 때문</button>
+          <button class="opt">HBM은 웨이퍼가 필요 없기 때문</button>
+          <button class="opt" data-correct>같은 비트를 만드는 데 웨이퍼를 더 많이 쓰고 적층 수율 손실도 있기 때문</button>
+          <button class="opt">정부가 일반 DRAM 생산을 제한하기 때문</button>
+        </div>
+        <div class="quiz-exp">HBM용 DRAM 다이는 TSV 등으로 면적이 크고, 여러 층을 쌓다 보면 불량이 생긴다. 비트당 웨이퍼 소모가 몇 배여서 일반 DRAM에 쓸 웨이퍼가 줄어든다.</div>
+      </div>
+      <div class="quiz-q" data-ch="packaging"><p class="qch">11 패키징</p>
+        <p>큰 칩을 칩렛으로 쪼개면 원가가 내려가는 주된 이유는?</p>
+        <div class="opts">
+          <button class="opt" data-correct>작은 다이의 수율이 높고, 미리 시험한 좋은 다이만 골라 붙이기 때문</button>
+          <button class="opt">패키징 비용이 없어지기 때문</button>
+          <button class="opt">웨이퍼 가격이 내려가기 때문</button>
+          <button class="opt">설계비가 0이 되기 때문</button>
+        </div>
+        <div class="quiz-exp">수율은 면적에 따라 지수적으로 떨어지므로 작은 다이로 나누면 좋은 다이 비율이 크게 오른다. 대신 연결 회로 면적과 패키징 비용이 늘어 그 차이만큼 이득이 줄어든다.</div>
+      </div>
+      <div class="quiz-q" data-ch="packaging"><p class="qch">11 패키징</p>
+        <p>2.5D 패키지(로직 다이 + HBM 6스택)에서 패키징 수율이 특히 중요한 이유는?</p>
+        <div class="opts">
+          <button class="opt">패키징 장비가 가장 비싸서</button>
+          <button class="opt">인터포저가 레티클보다 작아서</button>
+          <button class="opt">테스트를 할 수 없어서</button>
+          <button class="opt" data-correct>패키징에서 불량이 나면 비싼 로직 다이와 HBM까지 함께 버리기 때문</button>
+        </div>
+        <div class="quiz-exp">AX-1에서 다이와 HBM 원가만 약 2,400달러다. 패키징 수율 95%면 그 5%를 매번 버리는 셈이라, 완성 원가가 수율로 나눠진다.</div>
+      </div>
+      <div class="quiz-q" data-ch="demand"><p class="qch">12 수요</p>
+        <p>AX-1(판매가 25,000달러, 완성 원가 약 4,257달러)의 매출총이익률에 가장 가까운 것은?</p>
+        <div class="opts">
+          <button class="opt">약 17%</button>
+          <button class="opt">약 50%</button>
+          <button class="opt" data-correct>약 83%</button>
+          <button class="opt">약 99%</button>
+        </div>
+        <div class="quiz-exp">1 − 4,257 ÷ 25,000 ≈ 83%. 데이터센터 AI 가속기는 원가보다 성능·공급 부족이 가격을 정한다.</div>
+      </div>
+      <div class="quiz-q" data-ch="geography"><p class="qch">13 지리</p>
+        <p>SIA·BCG 기준(2019년 근사) 반도체 전체 부가가치 점유가 가장 큰 지역은?</p>
+        <div class="opts">
+          <button class="opt">대만</button>
+          <button class="opt" data-correct>미국(약 39%)</button>
+          <button class="opt">중국</button>
+          <button class="opt">한국</button>
+        </div>
+        <div class="quiz-exp">미국은 부가가치가 큰 설계·EDA·장비에서 앞서 전체 약 39%를 차지한다. 대만·한국은 제조, 일본은 장비·소재, 중국은 후공정 비중이 크다.</div>
+      </div>
+      <div class="quiz-q" data-ch="geopolitics"><p class="qch">14 지정학</p>
+        <p>AX-1의 TPP(2,000 TFLOPS × 8 bit = 16,000)와 기준 4,800을 비교한 결론은?</p>
+        <div class="opts">
+          <button class="opt">기준보다 낮아 어디든 팔 수 있다</button>
+          <button class="opt" data-correct>기준을 넘어 통제 대상 국가로는 허가 없이 팔 수 없다</button>
+          <button class="opt">TPP는 메모리에만 적용된다</button>
+          <button class="opt">TPP는 판매가로 계산한다</button>
+        </div>
+        <div class="quiz-exp">TPP 16,000은 기준 4,800의 3배를 넘는다. 판매 가능한 시장이 줄면 손익분기 판매량을 채우기가 어려워진다.</div>
+      </div>
+      <div class="quiz-q" data-ch="geopolitics"><p class="qch">14 지정학</p>
+        <p>어떤 품목의 HHI가 2,500을 넘는다는 것은?</p>
+        <div class="opts">
+          <button class="opt">공급사가 2,500곳 이상이다</button>
+          <button class="opt">가격이 2,500달러 이상이다</button>
+          <button class="opt" data-correct>소수 회사에 몰린 고집중 시장이다</button>
+          <button class="opt">경쟁이 완전하다</button>
+        </div>
+        <div class="quiz-exp">HHI는 점유율(%) 제곱의 합이다. 한 회사가 100%면 10,000이다. 2,500 이상은 고집중으로 보며, 공급 차질 위험이 크다.</div>
+      </div>
+      <div class="quiz-q" data-ch="korea"><p class="qch">15 한국</p>
+        <p>2019년 소재 수출 규제 이후 국산화에서 실제 병목이 된 것은?</p>
+        <div class="opts">
+          <button class="opt">공장 부지</button>
+          <button class="opt" data-correct>새 소재를 양산 라인에 넣기 위한 공정 인증(수율 검증)</button>
+          <button class="opt">수출 통계 집계</button>
+          <button class="opt">설계 소프트웨어 라이선스</button>
+        </div>
+        <div class="quiz-exp">소재를 만드는 것보다 고객 팹의 수율 검증을 통과하는 데 수개월이 걸린다. 그래서 대체 공급원은 평소에 미리 인증해 두어야 한다.</div>
+      </div>
+    </div>
+    <div class="fq-result" id="fq-result" hidden></div>
+  </section>
+</main>
+<script>
+(function () {
+  "use strict";
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  function label(ctx, s, x, y, font, color, align, base) {
+    ctx.font = font; ctx.fillStyle = color; ctx.textAlign = align || "left"; ctx.textBaseline = base || "alphabetic"; ctx.fillText(s, x, y);
+  }
+  const CH = Object.fromEntries(CB.CHAPTERS.map((c) => [c.slug, c]));
+  const chLink = (slug) => (CH[slug] ? `<a class="ch" href="${slug}.html">→ ${Number(CH[slug].num)}장 ${CH[slug].title}</a>` : "");
+
+  /* ---------------------------------------------------------------- 용어 데이터 */
+  const CATS = { econ: "시장·경제", biz: "사업 모델", design: "설계·IP", supply: "장비·소재", fab: "제조", mem: "메모리", pkg: "패키징·테스트", policy: "정책·지리" };
+  const CAT_COL = { econ: "seg-mkt", biz: "seg-mat", design: "seg-design", supply: "seg-equip", fab: "seg-fab", mem: "seg-mem", pkg: "seg-atp", policy: "seg-ip" };
+  // [한국어, 영어, 약어, 분야, "장1 장2", 정의]
+  const RAW = [
+    ["실리콘 사이클", "Silicon cycle", "", "econ", "cycle", "반도체 매출이 3~5년 주기로 호황과 불황을 오가는 현상. 수요 변화에 생산능력(팹 증설)이 약 2년 늦게 반응해서 생긴다."],
+    ["채찍 효과", "Bullwhip effect", "", "econ", "cycle", "최종 수요의 작은 변화가 유통·제조 단계를 거슬러 올라갈수록 주문량의 큰 출렁임으로 커지는 현상. 재고를 쌓고 푸는 반응이 겹쳐 생긴다."],
+    ["거미집 모형", "Cobweb model", "", "econ", "cycle memory", "올해 가격을 보고 내년 공급을 정할 때 가격과 생산량이 거미줄 모양으로 진동하는 모형. 메모리 가격 사이클을 설명할 때 쓴다."],
+    ["재고 일수", "Days of inventory", "DOI", "econ", "cycle", "지금 재고로 판매를 며칠 이어 갈 수 있는지 나타낸 지표. 불황 초입에 급증한다."],
+    ["슈퍼사이클", "Supercycle", "", "econ", "cycle memory", "보통 사이클보다 길고 큰 호황. 2017~2018년 서버 DRAM이 이끈 메모리 호황이 대표적이다."],
+    ["매출총이익률", "Gross margin", "", "econ", "business fabless demand", "(매출 − 매출원가) ÷ 매출. 팹리스·장비 회사는 대개 50~70%, 메모리 회사는 사이클에 따라 마이너스에서 60% 이상까지 오간다."],
+    ["감가상각", "Depreciation", "", "econ", "business foundry", "설비 투자비를 사용 연수(장비는 대개 5년)에 나눠 비용으로 잡는 것. 팹 웨이퍼 원가에서 가장 큰 항목이다."],
+    ["고정비·변동비", "Fixed vs variable cost", "", "econ", "business", "생산량과 상관없이 드는 비용(감가상각·인건비)과 생산량에 비례하는 비용(소재·전력). 팹은 고정비 비중이 매우 높다."],
+    ["가동률", "Utilization", "", "econ", "business foundry", "팹 생산능력 대비 실제로 투입한 웨이퍼 비율. 고정비가 커서 가동률이 떨어지면 장당 원가가 급등한다."],
+    ["손익분기점", "Break-even point", "", "econ", "business fabless", "매출이 총비용과 같아지는 판매량이나 가동률. 그보다 많이 팔아야 이익이 난다."],
+    ["설비투자", "Capital expenditure", "capex", "econ", "equipment foundry", "공장과 장비에 쓰는 투자. 반도체 산업은 매출의 약 30% 안팎을 설비투자로 쓴다(사이클에 따라 다름)."],
+    ["부가가치", "Value added", "", "econ", "overview geography", "매출에서 외부에서 사 온 재료·서비스 값을 뺀 몫. 가치사슬 단계별 지역 점유를 비교하는 기준이다."],
+    ["가치사슬", "Value chain", "", "econ", "overview", "설계 도구·IP → 칩 설계 → 장비·소재 → 웨이퍼 제조 → 패키징·테스트 → 시장으로 이어지는 단계 전체."],
+    ["WSTS", "World Semiconductor Trade Statistics", "WSTS", "econ", "market", "세계 반도체 매출을 집계·전망하는 업계 통계 기구. 로직·메모리·아날로그 같은 제품 분류의 기준이다."],
+    ["최종 시장", "End market", "", "econ", "market demand", "칩이 최종적으로 들어가는 응용 분야: 데이터센터·PC, 통신, 자동차, 산업, 소비자 가전, 정부·국방."],
+    ["칩 함량", "Semiconductor content", "", "econ", "demand", "기기 한 대에 들어가는 반도체 금액. 전기차와 AI 서버에서 빠르게 늘고 있다."],
+    ["평균 판매가", "Average selling price", "ASP", "econ", "memory market", "제품 한 개(또는 GB)당 평균 가격. 메모리 매출은 출하량보다 ASP 변화에 더 크게 흔들린다."],
+    ["가격 탄력성", "Price elasticity", "", "econ", "memory cycle", "가격이 1% 바뀔 때 수요가 몇 % 바뀌는지 나타낸 값. 메모리는 가격이 내리면 탑재 용량이 늘어나는 탄력이 있다."],
+    ["무어의 법칙", "Moore's law", "", "econ", "overview foundry", "칩 하나의 트랜지스터 수가 약 2년마다 두 배가 된다는 경험칙. 지금은 속도가 느려지고 트랜지스터당 비용이 예전만큼 내려가지 않는다."],
+    ["승자 독식", "Winner-take-all", "", "econ", "foundry", "고정비가 크고 학습 효과가 강한 시장에서 1위가 수익 대부분을 가져가는 구조. 선단 파운드리가 대표적이다."],
+    ["데이터센터", "Data center", "", "econ", "demand market", "서버를 모아 둔 시설. AI 투자로 반도체 수요에서 가장 빠르게 커지는 최종 시장이다."],
+    ["하이퍼스케일러", "Hyperscaler", "", "econ", "demand", "초대형 클라우드 사업자. 칩의 최대 구매자이면서 자체 칩을 설계하는 경쟁자이기도 하다."],
+    ["집중도", "Market concentration", "", "econ", "equipment materials", "시장이 소수 회사에 몰린 정도. HHI나 상위 n개사 점유율 합(CRn)으로 잰다."],
+    ["HHI", "Herfindahl-Hirschman index", "HHI", "econ", "materials geography", "점유율(%) 제곱의 합. 0~10,000이며 2,500을 넘으면 고집중 시장으로 본다. 한 회사 독점이면 10,000."],
+    ["CRn", "Concentration ratio", "CR3", "econ", "materials", "상위 n개 회사 점유율의 합. CR3가 90%면 세 회사가 시장의 90%를 갖는다."],
+
+    ["종합 반도체 기업", "Integrated device manufacturer", "IDM", "biz", "business", "설계부터 제조·판매까지 직접 하는 회사. 인텔, 삼성전자, TI, 인피니언 등."],
+    ["팹리스", "Fabless", "", "biz", "business fabless", "공장 없이 칩 설계·판매만 하고 제조는 파운드리에 맡기는 회사. 엔비디아, 퀄컴, AMD, 미디어텍 등."],
+    ["파운드리", "Foundry", "", "biz", "business foundry", "다른 회사가 설계한 칩을 위탁받아 웨이퍼로 만들어 주는 회사. TSMC, 삼성 파운드리, SMIC 등."],
+    ["팹라이트", "Fab-lite", "", "biz", "business", "일부 공정만 자체 팹에서 하고 나머지는 파운드리에 맡기는 절충형. 많은 아날로그·MCU 회사가 택한다."],
+    ["OSAT", "Outsourced semiconductor assembly and test", "OSAT", "biz", "packaging", "패키징·테스트를 위탁받아 하는 회사. ASE, 앰코, JCET 등."],
+    ["디자인 하우스", "Design house", "", "biz", "fabless foundry", "팹리스와 파운드리 사이에서 설계 마무리·검증과 생산 준비를 대행하는 서비스 회사."],
+    ["맞춤형 칩", "Application-specific integrated circuit", "ASIC", "biz", "fabless demand", "특정 용도나 고객을 위해 설계한 칩. 클라우드 회사의 자체 AI 칩이 대표적이다."],
+    ["디자인 윈", "Design win", "", "biz", "fabless", "고객사가 자기 제품에 특정 칩을 쓰기로 결정하는 것. 매출은 보통 1~3년 뒤에 나온다."],
+    ["수직 계열화", "Vertical integration", "", "biz", "business", "가치사슬 여러 단계를 한 회사가 직접 하는 것. IDM이 대표적이다."],
+    ["분업 구조", "Disaggregation", "", "biz", "business overview", "설계·제조·패키징을 서로 다른 회사가 나눠 맡는 산업 구조. 1987년 TSMC 설립 뒤 빠르게 퍼졌다."],
+    ["시스템 반도체", "System semiconductor (non-memory)", "", "biz", "korea market", "메모리를 뺀 반도체를 한국에서 부르는 말. 로직·아날로그·MCU·센서·광소자 등."],
+
+    ["전자 설계 자동화", "Electronic design automation", "EDA", "design", "eda-ip", "칩을 설계·검증하는 소프트웨어. 시놉시스·케이던스·지멘스 EDA 세 회사가 대부분을 차지한다."],
+    ["반도체 IP", "Semiconductor intellectual property", "IP", "design", "eda-ip", "다시 쓸 수 있게 만든 설계 블록(CPU 코어, 메모리 인터페이스, SerDes 등). 라이선스비와 로열티로 판다."],
+    ["라이선스·로열티", "License & royalty", "", "design", "eda-ip", "IP를 쓸 권리에 대한 선불 대가(라이선스)와 칩 한 개 팔 때마다 내는 사용료(로열티)."],
+    ["명령어 집합 구조", "Instruction set architecture", "ISA", "design", "eda-ip", "소프트웨어가 CPU에 내리는 명령의 규칙. x86, Arm, RISC-V가 대표적이다."],
+    ["RISC-V", "RISC-V", "", "design", "eda-ip", "누구나 라이선스비 없이 쓸 수 있는 개방형 명령어 집합 구조. 코어 설계는 직접 하거나 IP 회사에서 산다."],
+    ["시스템 온 칩", "System on chip", "SoC", "design", "fabless", "CPU·GPU·모뎀·메모리 제어기 등을 칩 하나에 담은 것. 스마트폰 AP가 대표적이다."],
+    ["애플리케이션 프로세서", "Application processor", "AP", "design", "fabless demand", "스마트폰·태블릿의 두뇌 역할을 하는 SoC."],
+    ["그래픽 처리 장치", "Graphics processing unit", "GPU", "design", "fabless demand", "병렬 연산에 특화된 프로세서. AI 학습·추론의 주력 칩이다."],
+    ["AI 가속기", "AI accelerator", "", "design", "fabless demand", "AI 연산을 빠르게 하도록 만든 칩. GPU, 맞춤형 ASIC, NPU 등. 이 책의 타깃 AX-1도 여기에 속한다."],
+    ["마이크로컨트롤러", "Microcontroller unit", "MCU", "design", "market demand", "작은 CPU·메모리·입출력을 한 칩에 담은 제어용 반도체. 자동차 한 대에 수십 개 이상 들어간다."],
+    ["아날로그 반도체", "Analog semiconductor", "", "design", "market", "전압·전류·신호 같은 연속량을 다루는 칩. 전원 관리, 증폭기, 데이터 변환기 등. 제품 수명이 길다."],
+    ["전력 반도체", "Power semiconductor", "", "design", "market demand", "전력을 변환·제어하는 소자. MOSFET, IGBT, SiC·GaN 소자 등. 전기차와 재생에너지에서 수요가 늘었다."],
+    ["이미지 센서", "CMOS image sensor", "CIS", "design", "market korea", "빛을 전기 신호로 바꾸는 센서. 소니가 1위, 삼성전자가 2위권이다."],
+    ["로직 반도체", "Logic", "", "design", "market", "연산·제어를 하는 디지털 칩(CPU, GPU, AP, ASIC, FPGA). 제품군 중 매출이 가장 크다."],
+    ["NRE", "Non-recurring engineering", "NRE", "design", "fabless", "칩 하나를 개발하는 데 한 번 드는 비용: 설계 인력, EDA, IP, 마스크 세트, 시제품. 선단 SoC는 수억 달러다."],
+    ["테이프아웃", "Tape-out", "", "design", "fabless", "설계를 끝내고 마스크 제작용 데이터를 파운드리에 넘기는 시점. 이후 수정은 큰 비용이 든다."],
+    ["검증", "Verification", "", "design", "eda-ip", "설계가 의도대로 동작하는지 확인하는 작업. 첨단 칩 설계비의 절반 안팎을 차지한다."],
+    ["설계 규칙 검사", "Design rule check", "DRC", "design", "eda-ip", "레이아웃이 공정의 기하학적 규칙(선폭·간격 등)을 지키는지 검사하는 것."],
+    ["공정 설계 키트", "Process design kit", "PDK", "design", "eda-ip foundry", "파운드리가 고객에게 주는 공정 정보 묶음(소자 모델, 설계 규칙, 표준 셀). 파운드리 생태계 경쟁력의 핵심이다."],
+    ["표준 셀", "Standard cell", "", "design", "eda-ip", "논리 게이트를 미리 그려 둔 레이아웃 블록. 자동 배치·배선의 재료다."],
+    ["다이 크기", "Die size", "", "design", "fabless foundry", "칩 한 개의 면적(mm²). 클수록 성능을 담기 쉽지만 웨이퍼당 개수와 수율이 함께 떨어진다."],
+    ["마스크 세트", "Mask set", "", "design", "fabless foundry", "칩 하나를 만드는 데 필요한 포토마스크 전체. 3 nm급은 약 90장, 약 2,500만 달러(근사)."],
+
+    ["노광 장비", "Lithography scanner", "", "supply", "equipment", "마스크의 회로 패턴을 빛으로 웨이퍼에 옮기는 장비. 팹 장비 가운데 가장 비싸다."],
+    ["EUV", "Extreme ultraviolet lithography", "EUV", "supply", "equipment", "파장 13.5 nm 빛을 쓰는 노광 기술. ASML이 유일한 공급사이며 한 대 약 2억 달러 안팎이다."],
+    ["High-NA EUV", "High numerical aperture EUV", "", "supply", "equipment", "광학계 개구수를 0.55로 높인 차세대 EUV. 한 대 약 3.5억 달러 이상으로 보도된다."],
+    ["DUV 액침 노광", "DUV immersion lithography", "ArFi", "supply", "equipment", "193 nm 빛과 물을 이용하는 노광. 여러 번 찍는 멀티 패터닝으로 7 nm급까지 쓸 수 있다."],
+    ["식각 장비", "Etch tool", "", "supply", "equipment", "플라스마나 화학 반응으로 막을 깎아 패턴을 만드는 장비. 램리서치가 1위다."],
+    ["증착 장비", "Deposition tool", "", "supply", "equipment", "웨이퍼 위에 얇은 막을 입히는 장비(CVD, PVD, ALD). 어플라이드 머티어리얼즈가 가장 넓은 제품군을 가졌다."],
+    ["원자층 증착", "Atomic layer deposition", "ALD", "supply", "equipment", "원자 한 층씩 막을 쌓아 매우 얇고 고른 막을 만드는 증착 방식."],
+    ["화학적 기계 연마", "Chemical mechanical planarization", "CMP", "supply", "equipment", "웨이퍼 표면을 화학·기계적으로 갈아 평탄하게 만드는 공정과 장비."],
+    ["검사·계측", "Inspection & metrology", "", "supply", "equipment", "결함을 찾고 막 두께·선폭 등을 재는 장비. KLA가 1위다."],
+    ["코터·현상기", "Coater/developer (track)", "", "supply", "equipment", "감광액을 바르고 노광 뒤 현상하는 장비. 노광기와 붙어 돈다. 도쿄 일렉트론이 거의 독점한다."],
+    ["테스트 장비", "Automatic test equipment", "ATE", "supply", "equipment packaging", "칩의 전기적 동작을 검사하는 장비. 어드밴테스트와 테라다인이 양강이다."],
+    ["실리콘 웨이퍼", "Silicon wafer", "", "supply", "materials", "칩을 만드는 바탕이 되는 단결정 실리콘 원판. 300 mm가 주력이며 일본 두 회사가 절반 이상을 만든다."],
+    ["포토레지스트", "Photoresist", "PR", "supply", "materials korea", "빛을 받으면 성질이 바뀌는 감광막. 노광 패턴을 받아 낸다. 일본 회사들의 점유가 높다."],
+    ["특수 가스", "Specialty gases", "", "supply", "materials", "식각·증착·세정에 쓰는 고순도 가스(NF3, WF6, 네온 등)."],
+    ["습식 화학", "Wet chemicals", "", "supply", "materials", "세정·식각에 쓰는 고순도 액체(불산, 황산, 과산화수소 등)."],
+    ["고순도 불화수소", "High-purity hydrogen fluoride", "HF", "supply", "materials korea", "산화막 식각·세정에 쓰는 불소 화합물. 2019년 일본의 대한국 수출 규제 품목이었다."],
+    ["포토마스크", "Photomask (reticle)", "", "supply", "materials fabless", "회로 패턴을 새긴 석영판. 노광 때 원판 역할을 한다. 레티클이라고도 부른다."],
+    ["ABF 필름", "Ajinomoto build-up film", "ABF", "supply", "materials packaging", "고성능 패키지 기판의 절연 필름. 아지노모토가 사실상 독점한다."],
+    ["공정 인증", "Qualification", "", "supply", "materials korea", "새 소재·장비를 양산 라인에 쓰기 전에 수율과 신뢰성을 검증하는 과정. 수개월이 걸려 공급처 교체의 실제 병목이 된다."],
+    ["소부장", "Materials, parts & equipment", "", "supply", "korea materials", "소재·부품·장비의 줄임말. 2019년 일본 수출 규제 뒤 한국 국산화 정책의 이름이 되었다."],
+
+    ["팹", "Fab (fabrication plant)", "", "fab", "foundry business", "웨이퍼 위에 회로를 만드는 반도체 공장. 선단 팹 한 곳에 약 200억 달러가 든다."],
+    ["메가팹", "Megafab / Gigafab", "", "fab", "foundry", "월 수만~10만 장 이상을 처리하는 초대형 팹. 규모의 경제로 장당 원가를 낮춘다."],
+    ["웨이퍼", "Wafer", "", "fab", "foundry", "칩을 만드는 실리콘 원판. 300 mm 웨이퍼 한 장에서 큰 칩은 수십 개, 작은 칩은 수천 개가 나온다."],
+    ["다이", "Die", "", "fab", "foundry", "웨이퍼를 잘라 낸 칩 한 조각."],
+    ["웨이퍼당 다이 수", "Dies per wafer", "DPW", "fab", "foundry", "웨이퍼 한 장에 들어가는 온전한 다이 수. 가장자리에서 잘리는 손실 때문에 다이가 클수록 불리하다."],
+    ["수율", "Yield", "", "fab", "foundry", "만든 다이 가운데 정상 동작하는 비율. 다이 면적과 결함 밀도가 커질수록 지수적으로 떨어진다."],
+    ["결함 밀도", "Defect density", "D0", "fab", "foundry", "면적당 치명적 결함 수(개/cm²). 안정된 공정은 0.1 안팎이다."],
+    ["수율 모델", "Yield model", "", "fab", "foundry", "결함 밀도와 면적으로 수율을 추정하는 식: 푸아송, 머피, 음이항 등."],
+    ["공정 노드", "Process node", "", "fab", "foundry", "공정 세대의 이름(7 nm, 3 nm 등). 지금은 실제 치수와 직접 대응하지 않는 세대 명칭에 가깝다."],
+    ["선단 공정", "Leading-edge process", "", "fab", "foundry geopolitics", "가장 앞선 세대의 공정. 지금은 대략 7 nm 이하를 가리킨다."],
+    ["성숙 공정", "Mature process", "", "fab", "foundry geopolitics", "28 nm 이상 오래된 공정. 자동차·가전·전력 칩 대부분이 여기서 나온다."],
+    ["핀펫", "Fin field-effect transistor", "FinFET", "fab", "foundry", "채널을 지느러미처럼 세운 트랜지스터 구조. 16·14 nm부터 5·3 nm급까지 주력이었다."],
+    ["게이트 올 어라운드", "Gate-all-around", "GAA", "fab", "foundry", "게이트가 채널을 사방에서 감싸는 트랜지스터 구조. 3·2 nm급부터 쓰인다."],
+    ["웨이퍼 투입량", "Wafer starts per month", "WSPM", "fab", "foundry business", "팹이 한 달에 투입하는 웨이퍼 장수. 생산능력의 단위다."],
+    ["사이클 타임", "Cycle time", "", "fab", "foundry", "웨이퍼 투입부터 완성까지 걸리는 시간. 선단 공정은 3~4개월이다."],
+    ["학습 곡선", "Learning curve", "", "fab", "foundry", "누적 생산이 늘수록 수율이 오르고 원가가 내려가는 현상. 먼저 시작한 회사가 유리한 이유다."],
+    ["멀티 패터닝", "Multiple patterning", "", "fab", "equipment", "한 층을 여러 번 노광·식각해 노광 장비 한계보다 촘촘한 패턴을 만드는 기술. 단계가 늘어 원가가 오른다."],
+    ["레티클 한계", "Reticle limit", "", "fab", "fabless packaging", "노광 장비가 한 번에 찍을 수 있는 최대 면적, 약 26 × 33 mm(약 858 mm²). 이보다 큰 칩은 칩렛으로 나눠야 한다."],
+
+    ["DRAM", "Dynamic random-access memory", "DRAM", "mem", "memory", "축전기에 전하를 저장하는 휘발성 메모리. 컴퓨터의 주기억 장치다. 세 회사가 약 95%를 만든다."],
+    ["NAND 플래시", "NAND flash", "NAND", "mem", "memory", "전원이 꺼져도 데이터가 남는 비휘발성 메모리. SSD와 스마트폰 저장 장치에 쓴다."],
+    ["3D NAND", "3D NAND", "", "mem", "memory", "셀을 수직으로 수백 층 쌓은 NAND. 층수가 기술 경쟁의 지표다."],
+    ["고대역폭 메모리", "High bandwidth memory", "HBM", "mem", "memory packaging korea", "DRAM 다이를 TSV로 8~16층 쌓아 넓은 대역폭을 낸 메모리. AI 가속기 바로 옆에 붙는다."],
+    ["베이스 다이", "Base (logic) die", "", "mem", "memory korea", "HBM 맨 아래에서 DRAM 층과 프로세서를 잇는 논리 다이. HBM4부터 파운드리 로직 공정으로 만드는 경우가 늘어난다."],
+    ["SSD", "Solid-state drive", "SSD", "mem", "memory demand", "NAND 플래시로 만든 저장 장치. 데이터센터와 PC에서 하드디스크를 대체했다."],
+    ["메모리 반도체", "Memory semiconductor", "", "mem", "memory market", "데이터를 저장하는 반도체(DRAM, NAND). 표준품이라 가격이 수급에 따라 크게 출렁인다."],
+    ["비트 성장", "Bit growth", "", "mem", "memory", "메모리 출하량을 저장 용량(비트) 기준으로 잰 증가율. 공정 미세화와 증설로 늘어난다."],
+    ["치킨 게임", "Chicken game", "", "mem", "memory", "경쟁사가 먼저 물러날 때까지 적자를 감수하며 증산·가격 인하를 이어 가는 경쟁. 2000년대 후반 DRAM 업계에서 벌어졌다."],
+    ["감산", "Production cut", "", "mem", "memory cycle", "불황 때 웨이퍼 투입을 줄여 공급을 조절하는 것. 2023년 메모리 회사들이 대규모로 감산했다."],
+    ["현물·고정 거래 가격", "Spot vs contract price", "", "mem", "memory cycle", "그날그날 거래되는 현물 가격과 대형 고객과 월·분기 단위로 정하는 고정 거래 가격. 현물이 먼저 움직인다."],
+
+    ["패키징", "Packaging", "", "pkg", "packaging", "다이를 보호하고 외부와 전기적으로 연결하는 공정. 테스트와 함께 후공정이라 부른다."],
+    ["후공정", "Back-end process", "", "pkg", "packaging", "웨이퍼 제조(전공정) 이후의 절단·패키징·테스트."],
+    ["칩렛", "Chiplet", "", "pkg", "packaging fabless", "큰 칩을 여러 작은 다이로 나눠 한 패키지에 묶는 설계 방식. 작은 다이는 수율이 높아 원가가 내려간다."],
+    ["2.5D 패키징", "2.5D packaging", "", "pkg", "packaging", "실리콘 인터포저 위에 로직 다이와 HBM을 나란히 올려 촘촘히 연결하는 방식. AI 가속기의 표준 구조다."],
+    ["CoWoS", "Chip on Wafer on Substrate", "CoWoS", "pkg", "packaging", "TSMC의 2.5D 패키징 상표명. 이 책에서는 일반 용어인 '2.5D 패키징'으로 부른다."],
+    ["인터포저", "Interposer", "", "pkg", "packaging", "다이들 사이를 잇는 미세 배선판. 실리콘 인터포저는 여러 장의 노광을 이어 레티클보다 크게 만든다."],
+    ["3D 적층", "3D stacking", "", "pkg", "packaging memory", "다이를 수직으로 쌓아 연결하는 기술. HBM, 3D 캐시 등."],
+    ["실리콘 관통 전극", "Through-silicon via", "TSV", "pkg", "packaging memory", "실리콘을 수직으로 뚫어 위아래 다이를 잇는 전극. HBM 적층의 핵심이다."],
+    ["하이브리드 본딩", "Hybrid bonding", "", "pkg", "packaging", "범프 없이 구리 패드끼리 직접 붙이는 접합. 연결 밀도를 크게 높인다."],
+    ["열압착 본더", "Thermo-compression bonder", "TC", "pkg", "packaging korea", "열과 압력으로 다이를 붙이는 장비. HBM 적층에 쓴다."],
+    ["플립칩", "Flip chip", "", "pkg", "packaging", "다이를 뒤집어 범프로 기판에 직접 붙이는 방식. 와이어 본딩보다 연결이 짧고 많다."],
+    ["와이어 본딩", "Wire bonding", "", "pkg", "packaging", "가는 금속선으로 다이와 기판을 잇는 전통적 방식. 값이 싸 여전히 가장 많이 쓴다."],
+    ["팬아웃 패키징", "Fan-out wafer-level packaging", "FOWLP", "pkg", "packaging", "다이 바깥까지 배선을 넓혀 두꺼운 기판 없이 얇게 만드는 패키징. 스마트폰 AP에 쓴다."],
+    ["패키지 기판", "Package substrate", "", "pkg", "packaging materials", "다이와 메인보드를 연결하는 다층 배선판. 고성능 FC-BGA 기판은 소수 회사가 만든다."],
+    ["좋은 다이", "Known good die", "KGD", "pkg", "packaging", "패키징 전에 시험을 통과한 다이. 칩렛·HBM처럼 여러 다이를 붙일 때 필수다."],
+    ["패키징 수율", "Packaging yield", "", "pkg", "packaging demand", "패키징 공정에서 정상으로 나오는 비율. 2.5D 패키지에서 불량이 나면 비싼 다이와 HBM까지 함께 버린다."],
+    ["최종 테스트", "Final test", "", "pkg", "packaging", "패키징이 끝난 칩을 전기적으로 검사해 등급을 나누는 공정."],
+
+    ["초크포인트", "Chokepoint", "", "policy", "geography geopolitics", "공급사가 한두 곳뿐이라 끊기면 산업 전체가 서는 지점. EUV 노광기, ABF 필름 등."],
+    ["수출 통제", "Export controls", "", "policy", "geopolitics", "특정 기술·장비·칩의 수출을 허가제로 묶는 정책. 2022년 이후 미국의 대중국 첨단 반도체 통제가 대표적이다."],
+    ["TPP", "Total processing performance", "TPP", "policy", "geopolitics", "미국 수출 통제가 쓰는 AI 칩 성능 지표(연산 성능 × 연산 비트 수). 기준 4,800을 넘으면 통제 대상이 된다."],
+    ["성능 밀도", "Performance density", "PD", "policy", "geopolitics", "TPP를 다이 면적으로 나눈 값. 성능을 여러 칩으로 쪼개 통제를 피하는 것을 막으려고 함께 쓴다."],
+    ["해외직접생산규칙", "Foreign direct product rule", "FDPR", "policy", "geopolitics", "미국 기술·장비로 만든 외국 제품에도 미국 수출 통제를 적용하는 규칙."],
+    ["엔티티 리스트", "Entity List", "", "policy", "geopolitics", "미국 상무부가 수출을 제한하는 외국 기업·기관 명단."],
+    ["CHIPS법", "CHIPS and Science Act", "", "policy", "geopolitics", "2022년 미국이 반도체 제조 보조금 약 390억 달러와 투자 세액 공제를 정한 법."],
+    ["유럽 반도체법", "European Chips Act", "", "policy", "geopolitics", "2023년 유럽연합이 역내 반도체 생산 점유 확대를 목표로 만든 법."],
+    ["자급률", "Self-sufficiency rate", "", "policy", "geopolitics", "한 나라가 쓰는 반도체 가운데 자국에서 만드는 비율. 중국 정책 목표에 자주 쓰인다."],
+    ["리쇼어링·프렌드쇼어링", "Reshoring / friend-shoring", "", "policy", "geopolitics geography", "생산을 자국으로(리쇼어링) 또는 우방국으로(프렌드쇼어링) 옮기는 공급망 재편."],
+    ["지역 집중 위험", "Geographic concentration risk", "", "policy", "geography korea", "한 단계의 생산이 한 지역에 몰려 재해·분쟁이 나면 세계 공급이 함께 멈추는 위험."],
+    ["가치사슬 점유", "Value-chain share", "", "policy", "geography korea", "각 단계 부가가치에서 한 나라가 차지하는 비율(SIA·BCG 방식). 미국 약 39%, 일본 약 14%, 한국 약 12%(2019 근사)."],
+    ["반도체 클러스터", "Semiconductor cluster", "", "policy", "korea geography", "팹·협력사·인력이 한 지역에 모인 산업 단지. 신주, 용인, 드레스덴 등. 전력·용수 확보가 숙제다."],
+    ["국가전략기술 세액공제", "Strategic technology tax credit", "", "policy", "korea", "한국이 반도체 등 국가전략기술 시설 투자에 주는 세액 공제. 이른바 K-칩스법(2023년 개정)."],
+    ["보조금 경쟁", "Subsidy race", "", "policy", "geopolitics", "미국·유럽·일본·한국·중국이 팹 유치를 위해 보조금과 세제 혜택을 겨루는 현상."],
+  ];
+  const TERMS = RAW.map(([ko, en, ab, cat, ch, def], i) => ({ id: "t" + i, ko, en, ab, cat, ch: ch.split(" "), def }));
+  const CH_ORDER = CB.CHAPTERS.map((c) => c.slug);
+
+  /* ---------------------------------------------------------------- 용어집 목록 */
+  {
+    const q = $("gl-q"), list = $("gl-list");
+    const cat = CB.seg("gl-cat", render), sort = CB.seg("gl-sort", render);
+    const CHO = "ㄱㄱㄴㄷㄷㄹㅁㅂㅂㅅㅅㅇㅈㅈㅊㅋㅌㅍㅎ";
+    const initial = (s) => { const c = s.charCodeAt(0) - 0xac00; return c >= 0 && c < 11172 ? CHO[Math.floor(c / 588)] : "A–Z · 숫자"; };
+    const hl = (s, qq) => { const t = esc(s); if (!qq) return t; const i = t.toLowerCase().indexOf(qq); return i < 0 ? t : t.slice(0, i) + "<mark>" + t.slice(i, i + qq.length) + "</mark>" + t.slice(i + qq.length); };
+    function render() {
+      const qq = q.value.trim().toLowerCase(), c = cat();
+      let items = TERMS.filter((t) => (c === "all" || t.cat === c) && (!qq || (t.ko + " " + t.en + " " + t.ab + " " + t.def).toLowerCase().includes(qq)));
+      const score = (t) => (qq && (t.ko.toLowerCase().includes(qq) || t.en.toLowerCase().includes(qq) || t.ab.toLowerCase().includes(qq)) ? 0 : 1);
+      const s = sort();
+      const key = (t) => (s === "cat" ? CATS[t.cat] : s === "ch" ? CH[t.ch[0]].num + " " + CH[t.ch[0]].title : initial(t.ko));
+      items.sort((a, b) => score(a) - score(b) || (s === "ch" ? CH_ORDER.indexOf(a.ch[0]) - CH_ORDER.indexOf(b.ch[0]) : s === "cat" ? Object.keys(CATS).indexOf(a.cat) - Object.keys(CATS).indexOf(b.cat) : 0) || a.ko.localeCompare(b.ko, "ko"));
+      $("gl-count").textContent = items.length + " / " + TERMS.length;
+      if (!items.length) { list.innerHTML = `<div class="gl-empty">'${esc(q.value)}'에 맞는 용어가 없다. 철자를 바꾸거나 분야를 '전체'로 둔다.</div>`; return; }
+      const html = []; let last = null;
+      items.forEach((t) => {
+        const g = qq && score(t) === 0 ? "이름 일치" : key(t);
+        if (g !== last) { html.push(`<div class="gl-group">${esc(g)}</div>`); last = g; }
+        html.push(`<div class="gl-item" id="term-${t.id}"><h4>${hl(t.ko, qq)}<span class="en">(${hl(t.en, qq)})</span>${t.ab && t.ab !== t.ko ? `<span class="abbr">${hl(t.ab, qq)}</span>` : ""}</h4><p>${hl(t.def, qq)}</p><span class="cat">${CATS[t.cat]}</span>${t.ch.map(chLink).join("")}</div>`);
+      });
+      list.innerHTML = html.join("");
+    }
+    q.addEventListener("input", CB.debounce(render, 80));
+    render();
+  }
+
+  /* ---------------------------------------------------------------- 용어 지도 */
+  {
+    const cvEl = $("tm-cv"), chSel = $("tm-ch");
+    const used = new Set(TERMS.flatMap((t) => t.ch));
+    CB.CHAPTERS.filter((c) => used.has(c.slug)).forEach((c) => { const o = document.createElement("option"); o.value = c.slug; o.textContent = Number(c.num) + "장 " + c.title; chSel.appendChild(o); });
+    let selId = "t" + TERMS.findIndex((t) => t.ab === "NRE"), hovId = null, L = [], flash = 0;
+    const chipTxt = (t) => t.ab && t.ab.length <= 7 ? t.ab : t.ko;
+    function layout(ctx, w) {
+      const nar = w < 560, padL = nar ? 10 : 112, chipH = 22, gap = 5, out = []; let y = 30;
+      ctx.font = CB.font(12, false, 600);
+      Object.keys(CATS).forEach((c) => {
+        const items = TERMS.filter((t) => t.cat === c);
+        const top = y;
+        if (nar) y += 18;
+        let x = padL;
+        items.forEach((t) => {
+          const tw = ctx.measureText(chipTxt(t)).width + 14;
+          if (x + tw > w - 8) { x = padL; y += chipH + gap; }
+          out.push({ t, x, y, w: tw, h: chipH, c });
+          x += tw + gap;
+        });
+        y += chipH + 12;
+        out.push({ band: c, y0: top - 4, y1: y - 6 });
+      });
+      return { out, h: y + 26 };
+    }
+    const mctx = document.createElement("canvas").getContext("2d");
+    const cv = CB.canvas(cvEl, (ctx, w, h) => {
+      const p = CB.palette(), nar = w < 560, ch = chSel.value, lay = layout(ctx, w);
+      label(ctx, "분야별 용어 " + TERMS.length + "개" + (ch !== "all" ? " · 밝은 칩 = " + Number(CH[ch].num) + "장에서 다룸" : ""), 10, 16, CB.font(12.5, false, 700), p.text, "left", "middle");
+      L = [];
+      lay.out.filter((o) => o.band).forEach((o, i) => {
+        const col = CB.color(CAT_COL[o.band]);
+        ctx.fillStyle = CB.alpha(col, i % 2 ? 0.05 : 0.09); ctx.fillRect(4, o.y0, w - 8, o.y1 - o.y0);
+        if (nar) label(ctx, CATS[o.band], 10, o.y0 + 12, CB.font(11.5, false, 700), col, "left", "middle");
+        else label(ctx, CATS[o.band], 10, o.y0 + 15, CB.font(12, false, 700), col, "left", "middle");
+      });
+      lay.out.filter((o) => o.t).forEach((o) => {
+        const t = o.t, col = CB.color(CAT_COL[t.cat]), lit = ch === "all" || t.ch.includes(ch), on = t.id === selId, hv = t.id === hovId;
+        CB.rrect(ctx, o.x, o.y, o.w, o.h, 11);
+        ctx.fillStyle = on ? col : CB.alpha(col, lit ? (hv ? 0.4 : 0.22) : 0.06); ctx.fill();
+        if (on && flash > 0) { ctx.strokeStyle = CB.alpha(col, flash); ctx.lineWidth = 2 + 6 * flash; ctx.stroke(); ctx.lineWidth = 1; }
+        label(ctx, chipTxt(t), o.x + o.w / 2, o.y + o.h / 2 + 1, CB.font(12, false, 600), on ? "#fff" : lit ? p.text : p.faint, "center", "middle");
+        L.push(o);
+      });
+    }, { get height() { mctx.canvas.width = 10; return layout(mctx, Math.max(200, cvEl.parentElement.clientWidth)).h; } });
+    const tip = CB.tip(cvEl);
+    const at = (x, y) => L.find((o) => x >= o.x && x <= o.x + o.w && y >= o.y && y <= o.y + o.h);
+    function upd() {
+      const t = TERMS.find((z) => z.id === selId), ch = chSel.value;
+      $("tm-info").innerHTML = `<h4>${esc(t.ko)} <span class="en">(${esc(t.en)}${t.ab && t.ab !== t.ko ? ", " + esc(t.ab) : ""})</span></h4><p>${esc(t.def)}</p><div class="chips"><span>${CATS[t.cat]}</span>${t.ch.map((s) => `<span>${Number(CH[s].num)}장 ${CH[s].title}</span>`).join("")}</div><p style="margin-top:6px!important">${t.ch.map(chLink).join(" · ")}</p>`;
+      const n = ch === "all" ? TERMS.length : TERMS.filter((z) => z.ch.includes(ch)).length;
+      CB.stat("tm-o1", TERMS.length + "개");
+      CB.stat("tm-o2", n + "개");
+      const cnt = {}; TERMS.filter((z) => ch === "all" || z.ch.includes(ch)).forEach((z) => (cnt[z.cat] = (cnt[z.cat] || 0) + 1));
+      const top = Object.entries(cnt).sort((a, b) => b[1] - a[1])[0];
+      CB.stat("tm-o3", top ? CATS[top[0]] + " <small>" + top[1] + "</small>" : "—");
+    }
+    const loop = CB.loop($("sim-gl-map"), (dt) => { flash = Math.max(0, flash - dt * 1.2); cv.redraw(); if (flash <= 0) loop.stop(); });
+    loop.stop();
+    CB.drag(cvEl, {
+      start(x, y) { const o = at(x, y); if (o) { selId = o.t.id; upd(); cv.redraw(); } },
+      hover(x, y) {
+        const o = at(x, y), id = o ? o.t.id : null;
+        if (id !== hovId) { hovId = id; cv.redraw(); }
+        if (o) tip.show(x, y, `<b>${esc(o.t.ko)}</b><small>${esc(o.t.en)}</small><br>${esc(o.t.def)}`); else tip.hide();
+      },
+    });
+    cvEl.addEventListener("pointerleave", () => { hovId = null; tip.hide(); cv.redraw(); });
+    chSel.addEventListener("change", () => { const ch = chSel.value; const cur = TERMS.find((z) => z.id === selId); if (ch !== "all" && !cur.ch.includes(ch)) selId = TERMS.find((z) => z.ch.includes(ch)).id; upd(); cv.redraw(); });
+    $("tm-rand").addEventListener("click", () => {
+      const ch = chSel.value, pool = TERMS.filter((z) => ch === "all" || z.ch.includes(ch));
+      selId = pool[Math.floor(Math.random() * pool.length)].id; flash = 1; upd(); loop.start();
+    });
+    upd();
+  }
+
+  /* ---------------------------------------------------------------- 회사 사전 */
+  const SEGN = { ip: "EDA·IP", design: "로직 설계", dao: "아날로그·개별 소자", mem: "메모리", fab: "웨이퍼 제조(파운드리)", equip: "장비", mat: "소재·부품", atp: "패키징·테스트" };
+  const MODELN = { fabless: "팹리스", foundry: "파운드리", idm: "IDM", osat: "OSAT", equip: "장비", mat: "소재", eda: "EDA", ip: "IP" };
+  const SEG_ORDER = ["ip", "design", "dao", "mem", "fab", "equip", "mat", "atp"];
+  const RGN = (k) => IND.REGIONS[k].name;
+  {
+    // 회사 → IND.CHOKEPOINTS 점유표의 이름(같은 단계 품목에서만 찾는다)
+    const ALIAS = { asml: ["ASML"], amat: ["AMAT"], lam: ["Lam"], tel: ["TEL"], kla: ["KLA"], screen: ["SCREEN"], semes: ["SEMES"], lasertec: ["Lasertec"], asmi: ["ASMI"],
+      shinetsu: ["Shin-Etsu"], sumco: ["SUMCO"], globalwafers: ["GlobalWafers"], sksiltron: ["SK siltron"], jsr: ["JSR"], tok: ["TOK"], ajinomoto: ["Ajinomoto"],
+      tsmc: ["TSMC"], "samsung-foundry": ["Samsung"], samsung: ["Samsung"], skhynix: ["SK hynix", "SK hynix·Solidigm"], micron: ["Micron"], kioxia: ["Kioxia"], sandisk: ["Sandisk"],
+      smic: ["SMIC"], umc: ["UMC"], gf: ["GF"], synopsys: ["Synopsys"], cadence: ["Cadence"], "siemens-eda": ["Siemens"], ase: ["ASE"], amkor: ["Amkor"], jcet: ["JCET"], tfme: ["TFME"], cxmt: ["CXMT 등"] };
+    const segSel = $("cd-seg"), qEl = $("cd-q"), cvEl = $("cd-cv");
+    SEG_ORDER.forEach((k) => { const o = document.createElement("option"); o.value = k; o.textContent = SEGN[k]; segSel.appendChild(o); });
+    $("cd-legend").innerHTML = ["us", "tw", "kr", "jp", "cn", "eu", "other"].map((k) => `<span><i style="background:var(--rg-${k})"></i>${RGN(k)}</span>`).join("");
+    const rg = CB.seg("cd-rg", () => refresh()), sort = CB.seg("cd-sort", () => refresh());
+    let selId = "tsmc", hovId = null, L = [];
+    const filtered = () => {
+      const qq = qEl.value.trim().toLowerCase(), r = rg(), sg = segSel.value;
+      const out = IND.COMPANIES.filter((c) => (r === "all" || c.rg === r || (r === "other" && (c.rg === "other" || c.rg === "sea"))) && (sg === "all" || c.seg === sg) &&
+        (!qq || (c.name + " " + c.ko + " " + c.country + " " + c.note).toLowerCase().includes(qq)));
+      return sort() === "rev" ? out.sort((a, b) => b.rev - a.rev) : out.sort((a, b) => a.ko.localeCompare(b.ko, "ko"));
+    };
+    const maxRows = (w) => (w < 560 ? 12 : 16);
+    const cv = CB.canvas(cvEl, (ctx, w, h) => {
+      const p = CB.palette(), nar = w < 560, F = filtered();
+      L = [];
+      const tot = F.reduce((a, c) => a + c.rev, 0);
+      label(ctx, F.length + "개사 · 매출 합 " + CB.usd(tot) + "(2024 근사)", 12, 18, CB.font(12.5, false, 700), p.text, "left", "middle");
+      // 지역 비중 막대
+      const by = 32, bh = 26, bx = 12, bw = w - 24;
+      const rs = {}; F.forEach((c) => (rs[c.rg] = (rs[c.rg] || 0) + c.rev));
+      let x = bx;
+      ctx.fillStyle = CB.alpha(p.dim, 0.12); ctx.fillRect(bx, by, bw, bh);
+      if (tot > 0) Object.entries(rs).sort((a, b) => b[1] - a[1]).forEach(([k, v]) => {
+        const ww = (v / tot) * bw; ctx.fillStyle = CB.regionColor(k); ctx.fillRect(x, by, ww, bh);
+        if (ww > 54) label(ctx, RGN(k) + " " + Math.round((100 * v) / tot) + "%", x + 6, by + bh / 2 + 1, CB.font(11.5, false, 700), "#fff", "left", "middle");
+        x += ww;
+      });
+      // 상위 막대
+      const N = Math.min(F.length, maxRows(w)), top = by + bh + 26, rh = 22, lw = nar ? 100 : 150;
+      label(ctx, sort() === "rev" ? "매출 상위 " + N + "곳" : "이름순 앞 " + N + "곳", 12, top - 10, CB.font(11.5, false, 700), p.dim, "left", "middle");
+      const mx = Math.max(1, ...F.slice(0, N).map((c) => c.rev));
+      F.slice(0, N).forEach((c, i) => {
+        const y = top + i * rh, on = c.id === selId, hv = c.id === hovId;
+        if (on || hv) { ctx.fillStyle = CB.alpha(p.accent, on ? 0.14 : 0.07); ctx.fillRect(4, y, w - 8, rh); }
+        ctx.fillStyle = CB.regionColor(c.rg); ctx.beginPath(); ctx.arc(14, y + rh / 2, 4, 0, 7); ctx.fill();
+        ctx.save(); ctx.beginPath(); ctx.rect(22, y, lw - 26, rh); ctx.clip();
+        label(ctx, c.ko, 24, y + rh / 2 + 1, CB.font(nar ? 11.5 : 12.5, false, on ? 700 : 500), p.text, "left", "middle");
+        ctx.restore();
+        const bwid = w - lw - 70, len = (c.rev / mx) * bwid;
+        ctx.fillStyle = CB.alpha(CB.regionColor(c.rg), on ? 1 : 0.8); ctx.fillRect(lw, y + 4, Math.max(2, len), rh - 8);
+        label(ctx, c.rev > 0 ? CB.usd(c.rev) : "외부 판매 없음", lw + Math.max(2, len) + 6, y + rh / 2 + 1, CB.font(10.5, true), p.dim, "left", "middle");
+        L.push({ id: c.id, y0: y, y1: y + rh });
+      });
+      if (!F.length) label(ctx, "조건에 맞는 회사가 없다", w / 2, top + 30, CB.font(13), p.dim, "center", "middle");
+      else if (F.length > N) label(ctx, "외 " + (F.length - N) + "곳은 아래 표에", 12, top + N * rh + 14, CB.font(11), p.faint, "left", "middle");
+    }, { get height() { const w = cvEl.parentElement.clientWidth; return 32 + 26 + 26 + Math.max(2, Math.min(filtered().length, maxRows(w))) * 22 + 34; } });
+    const tip = CB.tip(cvEl);
+    function info() {
+      const c = IND.company(selId);
+      if (!c) { $("cd-info").innerHTML = "회사를 고른다."; return; }
+      const cps = IND.CHOKEPOINTS.filter((cp) => cp.seg === c.seg && (ALIAS[c.id] || []).some((n) => cp.shares.some(([m]) => m === n)))
+        .map((cp) => { const v = cp.shares.find(([m]) => (ALIAS[c.id] || []).includes(m))[1]; return `<span>${cp.name} 약 ${v}%</span>`; });
+      $("cd-info").innerHTML = `<h4><span class="co"><i class="${c.rg}"></i>${esc(c.ko)}</span> <span class="en">(${esc(c.name)})</span></h4><p>${esc(c.country)} · ${SEGN[c.seg]} · ${MODELN[c.model]} · 2024년 매출 약 ${c.rev > 0 ? CB.usd(c.rev) : "— (외부 판매 없음·초기 단계)"}. ${esc(c.note)}.</p><div class="chips">${cps.join("") || "<span>점유율 표(IND.CHOKEPOINTS)에 없는 회사</span>"}</div>`;
+    }
+    function table() {
+      const F = filtered();
+      $("cd-body").innerHTML = F.map((c) => `<tr data-id="${c.id}" class="${c.id === selId ? "on" : ""}"><td><b>${esc(c.ko)}</b><span class="sub">${esc(c.name)}</span></td><td><span class="co"><i class="${c.rg}"></i>${esc(c.country)}</span></td><td class="hide-n">${SEGN[c.seg]}<span class="sub">${MODELN[c.model]}</span></td><td class="num">${c.rev > 0 ? CB.usd(c.rev) : "—"}</td></tr>`).join("") || `<tr><td colspan="4">조건에 맞는 회사가 없다.</td></tr>`;
+      const tot = F.reduce((a, c) => a + c.rev, 0), lead = [...F].sort((a, b) => b.rev - a.rev)[0];
+      CB.stat("cd-o1", F.length + "곳");
+      CB.stat("cd-o2", CB.usd(tot));
+      CB.stat("cd-o3", lead && tot > 0 ? CB.pct(lead.rev / tot, 0) + " <small>" + esc(lead.ko) + "</small>" : "—");
+    }
+    function refresh() { const F = filtered(); if (F.length && !F.some((c) => c.id === selId)) selId = F[0].id; cv.resize(); table(); info(); }
+    $("cd-body").addEventListener("click", (e) => { const tr = e.target.closest("tr[data-id]"); if (tr) { selId = tr.dataset.id; cv.redraw(); table(); info(); } });
+    CB.drag(cvEl, {
+      start(x, y) { const r = L.find((q) => y >= q.y0 && y < q.y1); if (r) { selId = r.id; cv.redraw(); table(); info(); } },
+      hover(x, y) {
+        const r = L.find((q) => y >= q.y0 && y < q.y1), id = r ? r.id : null;
+        if (id !== hovId) { hovId = id; cv.redraw(); }
+        if (r) { const c = IND.company(r.id); tip.show(x, y, `<b>${esc(c.ko)}</b>${esc(c.country)} · ${SEGN[c.seg]}<br><small>${esc(c.note)}</small>`); } else tip.hide();
+      },
+    });
+    cvEl.addEventListener("pointerleave", () => { hovId = null; tip.hide(); cv.redraw(); });
+    qEl.addEventListener("input", CB.debounce(refresh, 100));
+    segSel.addEventListener("change", refresh);
+    refresh();
+  }
+
+  /* ---------------------------------------------------------------- 회사 맞히기 */
+  {
+    const ROWS = ["us", "tw", "kr", "jp", "cn", "eu", "other"];
+    const SHORTC = { ip: "IP", design: "로직", dao: "아날", mem: "메모", fab: "팹", equip: "장비", mat: "소재", atp: "후공" };
+    const FULLC = { ip: "EDA·IP", design: "로직 설계", dao: "아날로그", mem: "메모리", fab: "파운드리", equip: "장비", mat: "소재", atp: "후공정" };
+    const rowOf = (c) => (c.rg === "sea" ? "other" : c.rg);
+    const cvEl = $("gm-cv");
+    const lvl = CB.seg("gm-lvl", () => newGame());
+    let G = null, L = null, pulse = 0, hov = null;
+    function newGame() {
+      const pool = lvl() === "big" ? [...IND.COMPANIES].sort((a, b) => b.rev - a.rev).slice(0, 40) : IND.COMPANIES.slice();
+      for (let i = pool.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [pool[i], pool[j]] = [pool[j], pool[i]]; }
+      G = { qs: pool.slice(0, 10), i: 0, score: 0, perfect: 0, ans: null, hist: [] };
+      upd(); cv.redraw();
+    }
+    const cur = () => (G && G.i < G.qs.length ? G.qs[G.i] : null);
+    const cv = CB.canvas(cvEl, (ctx, w, h) => {
+      const p = CB.palette(), nar = w < 560, done = G && G.i >= G.qs.length;
+      const cardH = nar ? 74 : 70, lw = nar ? 40 : 70, hh = nar ? 22 : 26;
+      const gx = 8 + lw, gy = cardH + hh + 8, cw = (w - gx - 10) / SEG_ORDER.length, chh = (h - gy - 10) / ROWS.length;
+      // 카드
+      CB.rrect(ctx, 8, 8, w - 16, cardH - 12, 10); ctx.fillStyle = CB.alpha(p.accent, 0.08); ctx.fill();
+      const c = cur();
+      if (done) {
+        label(ctx, "게임 끝 · " + G.score + " / 20점", 20, 30, CB.font(nar ? 15 : 17, false, 700), p.text, "left", "middle");
+        label(ctx, "아래는 회사 " + IND.COMPANIES.length + "곳의 실제 분포(숫자 = 회사 수)", 20, 52, CB.font(nar ? 11 : 12), p.dim, "left", "middle");
+      } else if (c) {
+        label(ctx, "문제 " + (G.i + 1) + " / 10", w - 20, 24, CB.font(11, true), p.dim, "right", "middle");
+        label(ctx, c.name, 20, 28, CB.font(nar ? 16 : 19, false, 800), p.text, "left", "middle");
+        if (G.ans) {
+          const ok = G.ans.pts === 2, part = G.ans.pts === 1;
+          label(ctx, (ok ? "정답! " : part ? "절반 정답 · " : "오답 · ") + RGN(c.rg === "sea" ? "other" : c.rg) + " · " + FULLC[c.seg], 20, 52, CB.font(nar ? 11.5 : 12.5, false, 700), ok ? p.ok : part ? p.warn : p.bad, "left", "middle");
+        } else label(ctx, c.ko !== c.name ? c.ko + " · 본사 지역과 단계는?" : "본사 지역과 단계는?", 20, 52, CB.font(nar ? 11.5 : 12.5), p.dim, "left", "middle");
+      }
+      // 격자 머리
+      SEG_ORDER.forEach((k, j) => label(ctx, nar ? SHORTC[k] : FULLC[k], gx + (j + 0.5) * cw, gy - 8, CB.font(nar ? 10.5 : 11.5, false, 700), CB.segColor(k === "dao" ? "design" : k), "center"));
+      ROWS.forEach((r, i) => label(ctx, RGN(r), gx - 6, gy + (i + 0.5) * chh, CB.font(nar ? 10.5 : 12, false, 700), CB.regionColor(r), "right", "middle"));
+      const counts = {}; if (done) IND.COMPANIES.forEach((q) => { const k = rowOf(q) + "|" + q.seg; counts[k] = (counts[k] || 0) + 1; });
+      const mxc = Math.max(1, ...Object.values(counts));
+      ROWS.forEach((r, i) => SEG_ORDER.forEach((k, j) => {
+        const x = gx + j * cw, y = gy + i * chh, isHov = hov && hov.r === r && hov.k === k && !done && !(G && G.ans);
+        ctx.fillStyle = isHov ? CB.alpha(p.accent, 0.2) : CB.alpha(p.dim, (i + j) % 2 ? 0.06 : 0.1); ctx.fillRect(x + 1, y + 1, cw - 2, chh - 2);
+        if (done) {
+          const n = counts[r + "|" + k] || 0;
+          if (n) { ctx.fillStyle = CB.alpha(CB.regionColor(r), 0.15 + 0.75 * (n / mxc)); ctx.fillRect(x + 1, y + 1, cw - 2, chh - 2); label(ctx, String(n), x + cw / 2, y + chh / 2 + 1, CB.font(12, true, 700), p.text, "center", "middle"); }
+        }
+      }));
+      if (hov && !done && !(G && G.ans)) { ctx.strokeStyle = CB.alpha(p.accent, 0.4); ctx.strokeRect(gx + SEG_ORDER.indexOf(hov.k) * cw + 0.5, gy, cw - 1, ROWS.length * chh); ctx.strokeRect(gx, gy + ROWS.indexOf(hov.r) * chh + 0.5, SEG_ORDER.length * cw, chh - 1); }
+      if (G && G.ans && c) {
+        const ci = ROWS.indexOf(rowOf(c)), cj = SEG_ORDER.indexOf(c.seg);
+        const ai = ROWS.indexOf(G.ans.r), aj = SEG_ORDER.indexOf(G.ans.k);
+        if (G.ans.pts < 2) { ctx.strokeStyle = p.bad; ctx.lineWidth = 3; ctx.strokeRect(gx + aj * cw + 3, gy + ai * chh + 3, cw - 6, chh - 6); }
+        ctx.fillStyle = CB.alpha(p.ok, 0.35 + 0.4 * pulse); ctx.fillRect(gx + cj * cw + 2, gy + ci * chh + 2, cw - 4, chh - 4);
+        ctx.strokeStyle = p.ok; ctx.lineWidth = 3; ctx.strokeRect(gx + cj * cw + 2, gy + ci * chh + 2, cw - 4, chh - 4); ctx.lineWidth = 1;
+        label(ctx, "정답", gx + (cj + 0.5) * cw, gy + (ci + 0.5) * chh, CB.font(nar ? 10 : 12, false, 800), p.text, "center", "middle");
+      }
+      // 지난 답 표시(작은 점)
+      if (G && !done) G.hist.forEach((hh2) => { const i = ROWS.indexOf(hh2.r), j = SEG_ORDER.indexOf(hh2.k); ctx.fillStyle = hh2.pts === 2 ? p.ok : hh2.pts ? p.warn : p.bad; ctx.beginPath(); ctx.arc(gx + j * cw + 7 + (hh2.n % 3) * 6, gy + i * chh + 7, 2.5, 0, 7); ctx.fill(); });
+      L = { gx, gy, cw, chh };
+    }, { get height() { const w = cvEl.parentElement.clientWidth; return w < 560 ? 74 + 22 + 8 + 7 * 34 + 10 : 70 + 26 + 8 + 7 * 42 + 10; } });
+    const loop = CB.loop($("sim-gl-game"), (dt, t) => { pulse = 0.5 + 0.5 * Math.sin(t * 6); cv.redraw(); });
+    function cellAt(x, y) {
+      if (!L) return null;
+      const j = Math.floor((x - L.gx) / L.cw), i = Math.floor((y - L.gy) / L.chh);
+      return i >= 0 && i < ROWS.length && j >= 0 && j < SEG_ORDER.length ? { r: ROWS[i], k: SEG_ORDER[j] } : null;
+    }
+    function upd() {
+      const done = G.i >= G.qs.length, c = cur();
+      CB.stat("gm-o1", G.score + " <small>/ 20</small>");
+      CB.stat("gm-o2", G.perfect + "문제");
+      CB.stat("gm-o3", Math.min(G.i + (G.ans ? 1 : 0), 10) + " / 10");
+      if (done) {
+        const msg = G.score >= 17 ? "산업 지도가 머릿속에 들어 있다." : G.score >= 12 ? "큰 길은 안다. 장비·소재의 작은 회사들을 다시 보자." : "13장 공급망의 지리와 회사 사전을 한 번 더 훑어보자.";
+        $("gm-info").innerHTML = `<h4>최종 ${G.score} / 20점 · 완벽 정답 ${G.perfect}문제</h4><p>${msg} 격자의 숫자는 이 책 데이터(IND.COMPANIES)에 있는 회사 수다. 미국은 설계·장비, 일본은 장비·소재, 대만은 파운드리·후공정, 한국은 메모리 칸이 짙다.</p>`;
+      } else if (G.ans && c) {
+        $("gm-info").innerHTML = `<h4><span class="co"><i class="${c.rg}"></i>${esc(c.ko)}</span> <span class="en">(${esc(c.name)})</span></h4><p>${esc(c.country)} · ${SEGN[c.seg]} · ${MODELN[c.model]}. ${esc(c.note)}.</p><div class="chips"><span>+${G.ans.pts}점</span><span>'다음 문제'를 누르거나 격자를 한 번 더 누른다</span></div>`;
+      } else $("gm-info").innerHTML = "격자에서 이 회사의 <b>본사 지역(행)</b>과 <b>가치사슬 단계(열)</b>가 만나는 칸을 누른다.";
+    }
+    function next() { if (!G.ans) return; G.i++; G.ans = null; upd(); cv.redraw(); }
+    CB.drag(cvEl, {
+      start(x, y) {
+        if (!G || G.i >= G.qs.length) return;
+        if (G.ans) { next(); return; }
+        const cell = cellAt(x, y), c = cur(); if (!cell || !c) return;
+        const pts = (cell.r === rowOf(c) ? 1 : 0) + (cell.k === c.seg ? 1 : 0);
+        G.ans = { ...cell, pts }; G.score += pts; if (pts === 2) G.perfect++;
+        G.hist.push({ r: rowOf(c), k: c.seg, pts, n: G.hist.length });
+        upd(); cv.redraw();
+      },
+      hover(x, y) { const cell = cellAt(x, y); if ((cell && (!hov || cell.r !== hov.r || cell.k !== hov.k)) || (!cell && hov)) { hov = cell; cv.redraw(); } },
+    });
+    cvEl.addEventListener("pointerleave", () => { hov = null; cv.redraw(); });
+    $("gm-next").addEventListener("click", next);
+    $("gm-new").addEventListener("click", newGame);
+    newGame();
+    void loop;
+  }
+
+  /* ---------------------------------------------------------------- 종합 퀴즈 점수 */
+  {
+    const qs = [...document.querySelectorAll("#fq .quiz-q")], N = qs.length, res = new Map();
+    const track = $("fq-track");
+    function upd() {
+      const ok = [...res.values()].filter(Boolean).length;
+      $("fq-ok").textContent = ok; $("fq-n").textContent = res.size;
+      track.innerHTML = qs.map((q) => (res.has(q) ? `<i class="${res.get(q) ? "ok" : "bad"}" style="width:${100 / N}%"></i>` : "")).join("");
+      if (res.size === N) {
+        const wrong = qs.filter((q) => !res.get(q)).map((q) => q.dataset.ch);
+        const uniq = [...new Set(wrong)];
+        const [rank, title] = ok >= 18 ? ["RANK S", "산업 지도 마스터"] : ok >= 14 ? ["RANK A", "지도를 읽는 사람"] : ok >= 9 ? ["RANK B", "길을 찾는 중"] : ["RANK C", "한 바퀴 더"];
+        const box = $("fq-result"); box.hidden = false;
+        box.innerHTML = `<div class="rank">${rank}</div><div class="title">${title}</div><div class="big">${ok}<small> / ${N}</small></div><p>${uniq.length ? "다시 볼 장: " + uniq.map((s) => `<a href="${s}.html">${Number(CH[s].num)}장 ${CH[s].title}</a>`).join(" · ") : "모든 문제를 맞혔다. 16장 산업 실험실에서 직접 회사를 경영해 보자."}</p>`;
+      }
+    }
+    $("fq").addEventListener("answered", (e) => { const q = e.target.closest(".quiz-q"); if (q && !res.has(q)) { res.set(q, !!(e.detail && e.detail.correct)); upd(); } });
+    upd();
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chipindustrybook.euiyun.com/sitemap.xml
