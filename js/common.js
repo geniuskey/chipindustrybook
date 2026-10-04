@@ -652,6 +652,10 @@
     foot.className = "cb-foot";
     foot.innerHTML = `ChipIndustryBook — 만져 보며 읽는 반도체 산업 지도 · 수치는 공개 자료 기반 근사치이며 투자 조언이 아닙니다.<br>
       © 2026 geniuskey 및 ChipIndustryBook 기여자 · 콘텐츠 <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · 코드 <a href="${root}LICENSE-MIT">MIT</a> · <a href="${root}LICENSE.md">라이선스 안내</a>`;
+    const feedbackLink = document.createElement("a");
+    feedbackLink.href = "https://books.euiyun.com/feedback.html?book=chipindustrybook&page=" + encodeURIComponent(location.href);
+    feedbackLink.textContent = "오류·질문·제안";
+    foot.append(" · ", feedbackLink);
     body.appendChild(foot);
 
     // quiz
