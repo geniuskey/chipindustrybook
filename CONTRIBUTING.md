@@ -31,6 +31,9 @@
 - 실존 회사는 사실 위주로 중립적으로 쓴다. 이어지는 타깃(AX-1, 노바실리콘)은 가상이다.
 
 ## head 블록
+
+모든 HTML 페이지에는 아래 Cloudflare Web Analytics 코드를 `<head>`에 한 번 포함한다. SEO 자동 생성 블록 밖에 두며, 공통 Site Token을 유지한다.
+
 각 챕터 `<head>`에는 아래 표식만 두고 `python tools/head.py <slug>`를 실행한다(인자를 주면 그 장만 고친다). 제목·번호는 `js/common.js`의 `CHAPTERS`에서 읽는다.
 ```html
 <!doctype html>
@@ -42,6 +45,9 @@
 <!--head:start {"desc": "한 문장 설명(검색 결과에 보일 120자 안팎)", "libs": ["ind"]}-->
 <!--head:end-->
 <style> /* 이 장 전용 */ </style>
+<!-- Cloudflare Web Analytics -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"3d6151a0abc94ede89285d462527fa80"}'></script>
+<!-- End Cloudflare Web Analytics -->
 </head>
 ```
 `libs`의 `ind`는 `js/industry.js`, `three`는 three.js r147 + OrbitControls를 불러온다.
