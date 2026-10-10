@@ -321,7 +321,7 @@
       case "poisson": return Math.exp(-AD);
       case "seeds": return 1 / (1 + AD);
       case "negbin": return Math.pow(1 + AD / alpha, -alpha);
-      default: { const t = (1 - Math.exp(-AD)) / AD; return t * t; }
+      default: { const t = -Math.expm1(-AD) / AD; return t * t; }
     }
   };
   IND.YIELD_MODELS = { poisson: "푸아송", murphy: "머피", negbin: "음이항", seeds: "시즈" };
@@ -336,7 +336,7 @@
     const y = IND.yield(area / 100, o.D0 == null ? 0.1 : o.D0, o.model, o.alpha);
     const good = gross * y;
     const dieCost = good > 0 ? o.waferCost / good : Infinity;
-    const chipCost = (dieCost + (o.test || 0) + (o.pkg || 0)) / (o.pkgYield || 1);
+    const chipCost = (dieCost + (o.test || 0) + (o.pkg || 0)) / (o.pkgYield == null ? 1 : o.pkgYield);
     return { area, gross, yield: y, good, dieCost, chipCost, waferCost: o.waferCost };
   };
 
@@ -386,7 +386,7 @@
   };
 
   /* ------------------------------------------------------------ 모델: 시장 집중도 */
-  /** 허핀달-허쉬만 지수. shares: 점유율(%) 배열 → 0~10000. 2500 이상이면 고집중 */
+  /** 허핀달-허쉬만 지수. shares: 점유율(%) 배열 → 0~10000. 색 구간은 2010년 지침(2500 초과). 2023년 지침은 1800 초과 */
   IND.hhi = (shares) => shares.reduce((a, s) => a + s * s, 0);
   /** 상위 n개사 점유율 합 (CRn) */
   IND.cr = (shares, n = 3) => [...shares].sort((a, b) => b - a).slice(0, n).reduce((a, s) => a + s, 0);

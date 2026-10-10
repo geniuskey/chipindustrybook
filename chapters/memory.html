@@ -59,6 +59,8 @@
   </header>
 
   <!-- ============================================================ 1 -->
+  <div class="callout deep"><strong>HHI 색 구간의 기준</strong>이 책의 색 구간은 비교를 위해 미국 2010년 합병 지침의 1,500·2,500 기준을 사용한다(2,500 초과가 고집중). 그 지침은 2023년에 철회되었으며, <a href="https://www.justice.gov/atr/merger-guidelines/applying-merger-guidelines/guideline-1">2023년 지침</a>은 HHI 1,800 초과를 고집중으로 본다. HHI만으로 합병의 위법성이나 공급 중단을 판정할 수 없다. 국가·지역별 HHI는 지리적 쏠림을 비교하는 지표이며 기업 간 경쟁을 직접 측정하지 않는다.</div>
+
   <section id="landscape">
     <h2>세 개의 시장, 몇 안 되는 회사</h2>
     <p>메모리는 크게 둘이다. <span class="term">DRAM</span><span class="en">(Dynamic RAM)</span>은 전원이 켜져 있는 동안 프로세서 옆에서 데이터를 잠깐 들고 있는 작업대다. 빠르지만 전원이 꺼지면 내용이 사라진다. <span class="term">NAND 플래시</span><span class="en">(NAND Flash)</span>는 전원이 꺼져도 남는 창고다. SSD와 스마트폰 저장 공간이 여기에 해당한다. HBM은 DRAM 다이를 여러 장 수직으로 쌓아 AI 가속기 바로 옆에 붙이는 DRAM의 한 형태다. 셀 구조와 공정은 <a href="https://memorybook.euiyun.com/">MemoryBook</a>이 자세히 다룬다.</p>
@@ -85,7 +87,7 @@
       <div class="sim-note">해볼 것: ① 세 시장의 HHI를 비교한다. 2,500을 넘으면 '고집중'이다. ② 지역 강조에서 '한국'을 골라 DRAM·HBM에서 한국 두 회사가 가진 몫을 읽는다. ③ '중국'을 골라 아직 작은 몫을 확인한다. ④ 블록을 눌러 회사 설명을 본다. (막대 폭은 2024년 매출 추정 DRAM 약 950억, HBM 약 170억, NAND 약 700억 달러에 비례하되 좁은 막대는 최소 폭을 둔다. HBM은 DRAM의 일부다. 점유율은 2024년 전후 시장 조사 보도치를 반올림한 교육용 근사다.)</div>
     </div>
 
-    <p>DRAM은 세 회사가 95% 이상을, HBM은 세 회사가 사실상 전부를 만든다. HHI는 DRAM 약 3,200, HBM 약 4,100으로 어느 쪽이든 '고집중' 기준(2,500)을 훌쩍 넘는다. NAND는 다섯 무리로 나뉘어 상대적으로 덜 집중돼 있다. 한국의 <span class="co"><i class="kr"></i>삼성전자</span>와 <span class="co"><i class="kr"></i>SK하이닉스</span>가 DRAM의 약 4분의 3, HBM의 약 85%를 가진다. 미국의 <span class="co"><i class="us"></i>마이크론</span>이 셋째이고, 중국의 <span class="co"><i class="cn"></i>CXMT</span>와 <span class="co"><i class="cn"></i>YMTC</span>가 빠르게 따라오는 중이다.</p>
+    <p>DRAM은 세 회사가 95% 이상을, HBM은 세 회사가 사실상 전부를 만든다. HHI는 DRAM 약 3,200, HBM 약 4,100으로 어느 쪽이든 이 책의 2010년 비교 기준(2,500 초과)을 훌쩍 넘는다. NAND는 다섯 무리로 나뉘어 상대적으로 덜 집중돼 있다. 한국의 <span class="co"><i class="kr"></i>삼성전자</span>와 <span class="co"><i class="kr"></i>SK하이닉스</span>가 DRAM의 약 4분의 3, HBM의 약 85%를 가진다. 미국의 <span class="co"><i class="us"></i>마이크론</span>이 셋째이고, 중국의 <span class="co"><i class="cn"></i>CXMT</span>와 <span class="co"><i class="cn"></i>YMTC</span>가 빠르게 따라오는 중이다.</p>
     <div class="callout"><strong>같은 규격이 만드는 원자재 시장</strong>DRAM과 NAND의 인터페이스는 표준화 기구 JEDEC이 정한다. 규격이 같으니 고객은 가장 싼 곳에서 산다. 그래서 메모리 회사의 무기는 디자인이 아니라 <b>원가</b>다. 같은 웨이퍼에서 비트를 더 많이 뽑는 회사(공정 미세화·3D 적층이 앞선 회사)가 불황에서 살아남는다.</div>
   </section>
 
@@ -451,7 +453,7 @@
         const hh = IND.hhi(c.shares.filter((s) => s[0] !== "기타").map((s) => s[1]));
         T(ctx, m.label, x, 20, { size: 15, weight: 700 });
         T(ctx, m.sub, x, 37, { size: 11, color: P.dim });
-        T(ctx, "HHI " + Math.round(hh).toLocaleString("en-US"), x, 52, { size: 11, mono: true, color: hh >= 2500 ? P.bad : P.dim });
+        T(ctx, "HHI " + Math.round(hh).toLocaleString("en-US"), x, 52, { size: 11, mono: true, color: hh > 2500 ? P.bad : P.dim });
         let y = top;
         const sum = c.shares.reduce((a, s) => a + s[1], 0);
         c.shares.forEach(([name, pct]) => {

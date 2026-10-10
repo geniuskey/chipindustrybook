@@ -56,6 +56,8 @@
     </ul>
   </header>
 
+  <div class="callout deep"><strong>HHI 색 구간의 기준</strong>이 책의 색 구간은 비교를 위해 미국 2010년 합병 지침의 1,500·2,500 기준을 사용한다(2,500 초과가 고집중). 그 지침은 2023년에 철회되었으며, <a href="https://www.justice.gov/atr/merger-guidelines/applying-merger-guidelines/guideline-1">2023년 지침</a>은 HHI 1,800 초과를 고집중으로 본다. HHI만으로 합병의 위법성이나 공급 중단을 판정할 수 없다. 국가·지역별 HHI는 지리적 쏠림을 비교하는 지표이며 기업 간 경쟁을 직접 측정하지 않는다.</div>
+
   <section id="fab-capex">
     <h2>200억 달러는 어디로 가는가</h2>
     <p>3 nm급 로직 팹 한 동을 짓는 데 약 200억 달러가 든다는 말을 <a href="business.html">4장</a>에서 했다. 그 돈으로 무엇을 사는가. 땅을 고르고 진동을 막는 두꺼운 바닥을 붓고, 공기 중 먼지를 거의 0으로 만드는 <span class="term">클린룸</span><span class="en">(Cleanroom)</span>을 짓고, 도시 하나만큼의 전기와 초순수를 끌어오는 데 4분의 1쯤 쓴다. 나머지 4분의 3은 그 안에 들어갈 장비 값이다.</p>
@@ -201,7 +203,7 @@
   <section id="oligopoly">
     <h2>왜 몇 회사뿐인가</h2>
     <p>장비 시장은 작지 않다. 그런데 품목을 하나 고르면 그 시장의 주인은 한두 회사다. EUV는 ASML 한 곳, 감광막을 바르고 현상하는 트랙은 <span class="co"><i class="jp"></i>도쿄 일렉트론</span>이 약 90%, 검사·계측은 <span class="co"><i class="us"></i>KLA</span>가 절반 이상, 식각은 <span class="co"><i class="us"></i>램리서치</span>가 절반 가까이 가진다. 이 쏠림을 숫자 하나로 재는 것이 <span class="term">허핀달-허쉬만 지수</span><span class="en">(HHI)</span>다. 각 회사 점유율(%)을 제곱해 더한다.</p>
-    <div class="formula">$$\mathrm{HHI}=\sum_i s_i^2,\qquad N_{\text{eff}}=\frac{10000}{\mathrm{HHI}}$$<div class="where">\(s_i\): 회사 \(i\)의 점유율(%). 한 회사가 100%면 10,000, 똑같은 회사 10곳이면 1,000. \(N_{\text{eff}}\)는 '같은 크기 회사 몇 곳이 있는 것과 같은가'다. 통상 2,500을 넘으면 고집중 시장으로 본다.</div></div>
+    <div class="formula">$$\mathrm{HHI}=\sum_i s_i^2,\qquad N_{\text{eff}}=\frac{10000}{\mathrm{HHI}}$$<div class="where">\(s_i\): 회사 \(i\)의 점유율(%). 한 회사가 100%면 10,000, 똑같은 회사 10곳이면 1,000. \(N_{\text{eff}}\)는 '같은 크기 회사 몇 곳이 있는 것과 같은가'다. 이 책의 색 구간은 미국 2010년 지침을 따라 2,500 초과를 고집중으로 표시한다.</div></div>
     <p>아래에서 품목을 고르고 막대 끝을 끌어 점유율을 바꿔 보자. 한 회사의 몫을 바꾸면 나머지는 원래 비율대로 줄거나 는다.</p>
 
     <div class="sim" id="sim-hhi" data-desc="장비 품목(EUV, 노광, 식각, 증착, 트랙, 검사·계측, 세정, CMP, 이온 주입)을 고르면 회사별 점유율 도넛과 HHI·CR3가 보인다. 막대를 끌어 점유율을 바꾸면 집중도가 어떻게 변하는지 본다.">
@@ -951,7 +953,7 @@
       });
       ctx.fillStyle = P.bg; ctx.beginPath(); ctx.arc(dcx, dcy, dr * 0.58, 0, Math.PI * 2); ctx.fill();
       T(ctx, "HHI", dcx, dcy - 12, { size: 11, align: "center", color: P.dim });
-      T(ctx, nf(hhi), dcx, dcy + 8, { size: narrow ? 16 : 20, mono: true, weight: 700, align: "center", color: hhi >= 2500 ? P.bad : hhi >= 1500 ? P.warn : P.ok });
+      T(ctx, nf(hhi), dcx, dcy + 8, { size: narrow ? 16 : 20, mono: true, weight: 700, align: "center", color: hhi > 2500 ? P.bad : hhi >= 1500 ? P.warn : P.ok });
       // 막대
       const bx0 = narrow ? 14 : dcx + dr + 40, bw0 = w - bx0 - 16, nameW = narrow ? 92 : 104;
       const tx = bx0 + nameW, tw = bw0 - nameW - 44, rowH = narrow ? 30 : 34;
@@ -988,9 +990,9 @@
       if (!narrow) { T(ctx, "경쟁적", sc(750), sy - 9, { size: 10.5, color: P.ok, align: "center" }); T(ctx, "중간", sc(2000), sy - 9, { size: 10.5, color: P.warn, align: "center" }); }
       T(ctx, "고집중", sc(6250), sy - 9, { size: 10.5, color: P.bad, align: "center" });
       const mx = sc(hhi); ctx.fillStyle = P.text; ctx.beginPath(); ctx.moveTo(mx, sy - 1); ctx.lineTo(mx - 6, sy - 10); ctx.lineTo(mx + 6, sy - 10); ctx.closePath(); ctx.fill();
-      const verdict = hhi >= 2500 ? "고집중" : hhi >= 1500 ? "중간 집중" : "경쟁적";
+      const verdict = hhi > 2500 ? "고집중" : hhi >= 1500 ? "중간 집중" : "경쟁적";
       CB.stat("hh-o-h", nf(hhi)); CB.stat("hh-o-c", Math.round(cr3) + "%");
-      CB.stat("hh-o-n", neff.toFixed(1) + "곳"); CB.stat("hh-o-v", `<span class="${hhi >= 2500 ? "bad-t" : hhi >= 1500 ? "warn-t" : "ok-t"}">${verdict}</span>`);
+      CB.stat("hh-o-n", neff.toFixed(1) + "곳"); CB.stat("hh-o-v", `<span class="${hhi > 2500 ? "bad-t" : hhi >= 1500 ? "warn-t" : "ok-t"}">${verdict}</span>`);
     }, sizer("#hh-cv", (w) => (w < 560 ? Math.min(70, w * 0.2) * 2 + 18 + 24 + cur.length * 30 + 66 + 86 : Math.max(380, 40 + cur.length * 34 + 66 + 86))));
     CB.drag(cv.canvas, {
       start(x, y) { dragI = -1; if (!geo) return; const r = rows.find((q) => Math.abs(q.y - y) < geo.rowH / 2); if (r && x >= geo.tx - 12 && x <= geo.tx + geo.tw + 12) dragI = r.i; },

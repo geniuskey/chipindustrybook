@@ -59,6 +59,8 @@
     </ul>
   </header>
 
+  <div class="callout deep"><strong>HHI 색 구간의 기준</strong>이 책의 색 구간은 비교를 위해 미국 2010년 합병 지침의 1,500·2,500 기준을 사용한다(2,500 초과가 고집중). 그 지침은 2023년에 철회되었으며, <a href="https://www.justice.gov/atr/merger-guidelines/applying-merger-guidelines/guideline-1">2023년 지침</a>은 HHI 1,800 초과를 고집중으로 본다. HHI만으로 합병의 위법성이나 공급 중단을 판정할 수 없다. 국가·지역별 HHI는 지리적 쏠림을 비교하는 지표이며 기업 간 경쟁을 직접 측정하지 않는다.</div>
+
   <section id="division">
     <h2>단계마다 1등이 다르다</h2>
     <p>2019년 반도체 산업이 만든 부가가치를 본사 소재 지역별로 나누면 미국 약 39%, 일본 약 14%, 한국 약 12%, 유럽·대만·중국이 각각 약 10%다(SIA·BCG, 2021년 보고서). 어느 한 지역도 절반을 넘지 않는다. 이 숫자만 보면 공급망은 꽤 고르게 퍼져 있는 것처럼 보인다.</p>
@@ -103,7 +105,7 @@
   <section id="concentration">
     <h2>얼마나 몰려 있나: 집중도</h2>
     <p>점유율 표를 숫자 하나로 줄이는 흔한 방법이 <span class="term">허핀달-허시먼 지수</span><span class="en">(HHI, Herfindahl–Hirschman Index)</span>다. 참여자 점유율(%)을 제곱해서 더한다.</p>
-    <div class="formula">$$\mathrm{HHI} = \sum_i s_i^2 \qquad (0 < \mathrm{HHI} \le 10{,}000)$$<div class="where">\(s_i\): 참여자 \(i\)의 점유율(%). 한 곳이 100%면 10,000, 열 곳이 10%씩이면 1,000이다. 미국 합병 심사 지침은 오랫동안 2,500 이상을 고집중으로 보았다(2023년 개정 지침은 1,800).</div></div>
+    <div class="formula">$$\mathrm{HHI} = \sum_i s_i^2 \qquad (0 < \mathrm{HHI} \le 10{,}000)$$<div class="where">\(s_i\): 참여자 \(i\)의 점유율(%). 한 곳이 100%면 10,000, 열 곳이 10%씩이면 1,000이다. 미국 2010년 합병 지침은 2,500 초과를 고집중으로 분류했고, 2023년 지침은 1,800 초과로 바뀌었다.</div></div>
     <p>아래 사다리는 단계·품목을 HHI가 높은 순서로 세운다. 위쪽 버튼으로 "단계 × 지역"(앞 지도의 숫자)과 "품목 × 회사"(장비·소재·제조의 세부 품목)를 바꿔 보자. 줄 위에 마우스를 올리면 조각마다 누구인지 나온다.</p>
 
     <div class="sim" id="sim-hhi" data-desc="가치사슬 단계와 핵심 품목을 집중도(HHI) 순으로 세운 사다리. 지역 기준과 회사 기준을 바꾸면 평균이 감추던 독점 지점이 드러난다">
@@ -119,7 +121,7 @@
       <div class="map-legend"><span><i style="background:var(--rg-us)"></i>미국</span><span><i style="background:var(--rg-eu)"></i>유럽</span><span><i style="background:var(--rg-jp)"></i>일본</span><span><i style="background:var(--rg-kr)"></i>한국</span><span><i style="background:var(--rg-tw)"></i>대만</span><span><i style="background:var(--rg-cn)"></i>중국</span><span><i style="background:var(--rg-sea)"></i>동남아</span><span><i style="background:var(--rg-other)"></i>기타</span></div>
       <div class="info-panel" id="hh-info"><h4>줄을 눌러 보자</h4><p>HHI, 1위 점유(CR1), 상위 3곳 점유(CR3)와 그 의미가 여기에 나온다.</p></div>
       <div class="sim-readout">
-        <div class="stat"><span class="k">고집중(HHI ≥ 2,500)</span><span class="v" id="hh-o-n">—</span></div>
+        <div class="stat"><span class="k">고집중(HHI > 2,500)</span><span class="v" id="hh-o-n">—</span></div>
         <div class="stat"><span class="k">가장 몰린 곳</span><span class="v" id="hh-o-max">—</span></div>
         <div class="stat"><span class="k">가장 고른 곳</span><span class="v" id="hh-o-min">—</span></div>
       </div>
@@ -467,8 +469,8 @@
       const line = "1위 " + RG[ks[0]].name + " 약 " + Math.round(tg[ks[0]]) + "% · 상위 3개 지역 약 " + Math.round(t3) + "% · 지역 HHI 약 " + fmtInt(hhiOf(tg));
       if (narrow) {
         T(ctx, "1위 " + RG[ks[0]].name + " 약 " + Math.round(tg[ks[0]]) + "% · 상위 3개 약 " + Math.round(t3) + "%", bx, by + bh + 20, { size: 12, weight: 600 });
-        T(ctx, "지역 HHI 약 " + fmtInt(hhiOf(tg)) + (hhiOf(tg) >= 2500 ? " (고집중)" : ""), bx, by + bh + 38, { size: 12, color: hhiOf(tg) >= 2500 ? p.bad : p.dim });
-      } else T(ctx, line + (hhiOf(tg) >= 2500 ? " (고집중)" : ""), bx, by + bh + 22, { size: 12.5, weight: 600, color: hhiOf(tg) >= 2500 ? p.bad : p.text });
+        T(ctx, "지역 HHI 약 " + fmtInt(hhiOf(tg)) + (hhiOf(tg) > 2500 ? " (고집중)" : ""), bx, by + bh + 38, { size: 12, color: hhiOf(tg) > 2500 ? p.bad : p.dim });
+      } else T(ctx, line + (hhiOf(tg) > 2500 ? " (고집중)" : ""), bx, by + bh + 22, { size: 12.5, weight: 600, color: hhiOf(tg) > 2500 ? p.bad : p.text });
     }
     const tip = CB.tip(cv.canvas);
     cv.canvas.addEventListener("pointerleave", () => { tip.hide(); if (hover) { hover = null; dirty = true; } });
@@ -498,7 +500,7 @@
       CB.stat("vc-o-top", RG[ks[0]].name + " <small>약 " + Math.round(tg[ks[0]]) + "%</small>");
       CB.stat("vc-o-top3", "약 " + Math.round(ks.slice(0, 3).reduce((a, k) => a + tg[k], 0)) + "%");
       const hh = hhiOf(tg);
-      CB.stat("vc-o-hhi", fmtInt(hh) + (hh >= 2500 ? ' <small class="bad-t">고집중</small>' : ""));
+      CB.stat("vc-o-hhi", fmtInt(hh) + (hh > 2500 ? ' <small class="bad-t">고집중</small>' : ""));
       CB.stat("vc-o-va", seg === "all" ? "100%" : "약 " + IND.segment(seg).va + "%");
     }
     readout();
@@ -556,11 +558,11 @@
           rects.push({ i, q, x, y, w: sw, h: bh });
           x += sw;
         });
-        const c = r.hhi >= 2500 ? p.bad : r.hhi >= 1500 ? p.warn : p.ok;
+        const c = r.hhi > 2500 ? p.bad : r.hhi >= 1500 ? p.warn : p.ok;
         T(ctx, fmtInt(r.hhi), w - 10, y + bh / 2 + 1, { size: 12, mono: true, weight: 700, align: "right", base: "middle", color: c });
       });
       const yb = y0 + rowsCache.length * R + 12;
-      [[p.bad, "≥ 2,500 고집중"], [p.warn, "1,500~2,500 중간"], [p.ok, "< 1,500 낮음"]].forEach(([c, s], j) => {
+      [[p.bad, "> 2,500 고집중"], [p.warn, "1,500~2,500 중간"], [p.ok, "< 1,500 낮음"]].forEach(([c, s], j) => {
         const xx = 12 + j * (narrow ? 112 : 130);
         ctx.fillStyle = c; ctx.fillRect(xx, yb - 7, 10, 10); T(ctx, s, xx + 15, yb + 2, { size: 11, color: p.dim });
       });
@@ -582,13 +584,13 @@
       const named = r.parts.filter((q) => !q.other).map((q) => q.v);
       const cr1 = named.length ? Math.max(...named) : 0, cr3 = IND.cr(named, 3);
       const top = r.parts.filter((q) => !q.other)[0];
-      const lvl = r.hhi >= 7000 ? "사실상 한 곳이 전부다. 이 공급자가 멈추면 대체할 곳이 없다." : r.hhi >= 2500 ? "고집중이다. 상위 한두 곳이 멈추면 나머지가 메우기 어렵다." : r.hhi >= 1500 ? "중간 집중이다. 상위 몇 곳이 나눠 가진다." : "비교적 고르다. 한 곳이 멈춰도 나머지가 일부를 메울 수 있다.";
+      const lvl = r.hhi >= 7000 ? "사실상 한 곳이 전부다. 이 공급자가 멈추면 대체할 곳이 없다." : r.hhi > 2500 ? "고집중이다. 상위 한두 곳이 멈추면 나머지가 메우기 어렵다." : r.hhi >= 1500 ? "중간 집중이다. 상위 몇 곳이 나눠 가진다." : "비교적 고르다. 한 곳이 멈춰도 나머지가 일부를 메울 수 있다.";
       document.getElementById("hh-info").innerHTML = "<h4>" + r.name + " · HHI " + fmtInt(r.hhi) + "</h4><p>1위 " + (top ? top.lab : "—") + " 약 " + cr1 + "%, 상위 3곳 합 약 " + cr3 + "%. " + lvl + "</p><div class=\"chips\">" +
         r.parts.map((q) => '<span><i style="background:' + (q.other ? "var(--text-faint)" : CB.regionColor(q.k)) + '"></i>' + q.lab + "<b>" + q.v + "%</b></span>").join("") + "</div>";
     }
     function readout() {
       const rs = build();
-      CB.stat("hh-o-n", rs.filter((r) => r.hhi >= 2500).length + " / " + rs.length);
+      CB.stat("hh-o-n", rs.filter((r) => r.hhi > 2500).length + " / " + rs.length);
       CB.stat("hh-o-max", rs[0].short + " <small>" + fmtInt(rs[0].hhi) + "</small>");
       const last = rs[rs.length - 1];
       CB.stat("hh-o-min", last.short + " <small>" + fmtInt(last.hhi) + "</small>");

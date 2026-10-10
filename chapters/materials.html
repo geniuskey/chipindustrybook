@@ -52,6 +52,8 @@
     </ul>
   </header>
 
+  <div class="callout deep"><strong>HHI 색 구간의 기준</strong>이 책의 색 구간은 비교를 위해 미국 2010년 합병 지침의 1,500·2,500 기준을 사용한다(2,500 초과가 고집중). 그 지침은 2023년에 철회되었으며, <a href="https://www.justice.gov/atr/merger-guidelines/applying-merger-guidelines/guideline-1">2023년 지침</a>은 HHI 1,800 초과를 고집중으로 본다. HHI만으로 합병의 위법성이나 공급 중단을 판정할 수 없다. 국가·지역별 HHI는 지리적 쏠림을 비교하는 지표이며 기업 간 경쟁을 직접 측정하지 않는다.</div>
+
   <section id="market">
     <h2>작은 시장, 큰 급소</h2>
     <p><span class="term">반도체 소재</span><span class="en">(Semiconductor materials)</span>는 두 덩어리로 나뉜다. 팹 안에서 웨이퍼 위에 쓰이는 <span class="term">전공정 소재</span><span class="en">(Fab materials)</span>와, 다 만든 다이를 감싸는 <span class="term">후공정 소재</span><span class="en">(Packaging materials)</span>다. SEMI 집계로 2024년 전공정 소재가 약 430억 달러, 후공정 소재가 약 250억 달러다.</p>
@@ -189,9 +191,9 @@
 
   <section id="concentration">
     <h2>집중도: 어디에 급소가 있나</h2>
-    <p>시장이 얼마나 쏠렸는지는 <span class="term">허핀달-허쉬만 지수</span><span class="en">(HHI)</span>로 잰다. 점유율(%)을 제곱해 더한 값이다. 한 곳이 다 가지면 10,000, 열 곳이 고르게 나누면 1,000이다. 미국 경쟁 당국은 2,500을 넘으면 고집중으로 본다. 여기서는 회사가 아니라 <b>생산 국가</b>의 점유로 계산한다. 한 나라에서 정책이나 재해가 생겼을 때의 위험을 보려는 것이다.</p>
+    <p>시장이 얼마나 쏠렸는지는 <span class="term">허핀달-허쉬만 지수</span><span class="en">(HHI)</span>로 잰다. 점유율(%)을 제곱해 더한 값이다. 한 곳이 다 가지면 10,000, 열 곳이 고르게 나누면 1,000이다. 미국 2010년 합병 지침은 2,500 초과를 고집중으로 분류했다. 여기서는 회사가 아니라 <b>생산 국가</b>의 점유로 계산한다. 한 나라에서 정책이나 재해가 생겼을 때의 위험을 보려는 것이다.</p>
 
-    <div class="formula">$$\mathrm{HHI}=\sum_i s_i^2$$<div class="where">\(s_i\): 국가 \(i\)의 생산 점유(%). '기타'로 묶인 잘게 쪼개진 나머지는 계산에서 뺀다. 0~10,000, 2,500 이상이면 고집중.</div></div>
+    <div class="formula">$$\mathrm{HHI}=\sum_i s_i^2$$<div class="where">\(s_i\): 국가 \(i\)의 생산 점유(%). '기타'로 묶인 잘게 쪼개진 나머지는 계산에서 뺀다. 0~10,000. 이 책의 비교용 구간은 2,500 초과를 고집중으로 표시한다.</div></div>
 
     <div class="sim" id="sim-mat-conc" data-desc="갈륨·ABF·EUV 레지스트·네온·헬륨·웨이퍼 등 소재 12종의 생산 국가 점유와 HHI를 한 줄씩 비교하고, 줄을 눌러 실제 차질 사례를 본다.">
       <div class="sim-head"><span class="sim-tag">SIMULATOR</span><h3>소재 12종, 누가 얼마나 쥐고 있나</h3></div>
@@ -207,7 +209,7 @@
         <div class="stat"><span class="k">선택 소재</span><span class="v" id="con-o-name">—</span></div>
         <div class="stat"><span class="k">국가 HHI</span><span class="v" id="con-o-hhi">—</span></div>
         <div class="stat"><span class="k">1위 국가 점유</span><span class="v" id="con-o-cr1">—</span></div>
-        <div class="stat"><span class="k">고집중(2,500 이상) 품목</span><span class="v" id="con-o-n">—</span></div>
+        <div class="stat"><span class="k">고집중(2,500 초과) 품목</span><span class="v" id="con-o-n">—</span></div>
       </div>
       <div class="sim-note">해볼 것: ① 맨 위 세 줄(HHI 9,000 이상)이 무엇인지 읽는다. 시장 크기는 모두 작다. ② '일본 비중 순'으로 바꿔 일본이 1위인 품목 수를 센다. ③ 네온 줄을 눌러 2022년 전쟁 때 무슨 일이 있었는지 본다. ④ '기타'를 한 나라로 계산하면 HHI가 얼마나 달라지는지 본다. (각 품목의 국가 점유는 2021~2024년 공개 보도·업계 추정치를 반올림한 교육용 근사다. 회사 국적이 아니라 생산지 기준으로 어림했다.)</div>
     </div>
@@ -744,7 +746,7 @@
     let nHigh = 0;
     list.forEach((it, i) => {
       const y = top + i * rowH, hhi = conHHI(it), sel = it === conS.sel;
-      if (hhi >= 2500) nHigh++;
+      if (hhi > 2500) nHigh++;
       if (sel) { ctx.fillStyle = CB.alpha(P.accent, 0.1); ctx.fillRect(4, y, w - 8, rowH - 2); }
       const barY = nar ? y + 17 : y + 5, barH = nar ? 18 : rowH - 11;
       ctx.fillStyle = P.text; ctx.font = F(nar ? 11.5 : 12.5, sel ? 700 : 500); ctx.textBaseline = "middle"; ctx.textAlign = "left";
@@ -760,7 +762,7 @@
         x += ww;
       });
       // HHI
-      const hcol = hhi >= 2500 ? P.bad : hhi >= 1500 ? P.warn : P.ok;
+      const hcol = hhi > 2500 ? P.bad : hhi >= 1500 ? P.warn : P.ok;
       ctx.fillStyle = hcol; ctx.font = M(nar ? 11 : 12, 700); ctx.textAlign = "right";
       ctx.fillText(fmtN(hhi), nar ? w - 8 : w - 8, nar ? y + 8 : y + rowH / 2 - 1);
       if (!nar) {
@@ -773,7 +775,7 @@
     });
     const ly = top + list.length * rowH + 8;
     ctx.fillStyle = P.dim; ctx.font = F(10.5); ctx.textAlign = "left"; ctx.textBaseline = "top";
-    ctx.fillText((nar ? "" : "HHI 막대의 눈금 = 2,500(고집중 기준). ") + "빨강 ≥ 2,500 · 주황 ≥ 1,500 · 초록 미만", 8, ly);
+    ctx.fillText((nar ? "" : "HHI 막대의 눈금 = 2,500(고집중 기준). ") + "빨강 > 2,500 · 주황 ≥ 1,500 · 초록 미만", 8, ly);
     CB.stat("con-o-n", nHigh + " / " + CON.length);
   }, hopt("#con-cv", 0.6, 600, 26 + 12 * 40 + 30, 26 + 12 * 29 + 30));
   const conTip = CB.tip(conCv.canvas);
